@@ -3,11 +3,13 @@ import { motion } from "framer-motion";
 import { PageHeader } from "@/components/common/page-header";
 import { Seo } from "@/components/common/seo";
 import { Section } from "@/components/common/section";
+import { Tag } from "@/components/common/tag";
 import { routes } from "@/config/routes";
-import { slideUp, staggerContainer, viewportOnce } from "@/lib/animations";
+import { slideUp, staggerContainer } from "@/lib/animations";
 import { contentService } from "@/services/content";
 
 const experience = contentService.getExperience();
+const skills = contentService.getSkills();
 
 export function ExperiencePage() {
   return (
@@ -26,9 +28,8 @@ export function ExperiencePage() {
         />
 
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
+          initial={false}
+          animate="visible"
           variants={staggerContainer}
           className="mt-16 space-y-0"
         >
@@ -80,6 +81,24 @@ export function ExperiencePage() {
             </motion.article>
           ))}
         </motion.div>
+      </Section>
+
+      <Section className="border-t border-border/70">
+        <h2 className="font-mono text-xs tracking-[0.14em] text-muted-foreground uppercase">
+          Skills
+        </h2>
+        <dl className="mt-8 space-y-6">
+          {skills.map((group) => (
+            <div key={group.label} className="grid gap-3 sm:grid-cols-[200px_1fr] sm:gap-6">
+              <dt className="text-sm font-medium tracking-tight sm:pt-1">{group.label}</dt>
+              <dd className="flex flex-wrap gap-1.5">
+                {group.items.map((item) => (
+                  <Tag key={item}>{item}</Tag>
+                ))}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </Section>
     </>
   );

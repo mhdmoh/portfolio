@@ -5,7 +5,7 @@ import { Seo } from "@/components/common/seo";
 import { Section } from "@/components/common/section";
 import { routes } from "@/config/routes";
 import { icons } from "@/lib/icons";
-import { slideUp, staggerContainer, viewportOnce } from "@/lib/animations";
+import { slideUp, staggerContainer } from "@/lib/animations";
 import { contentService } from "@/services/content";
 
 const about = contentService.getAbout();
@@ -49,9 +49,8 @@ export function AboutPage() {
           Outside work
         </h2>
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
+          initial={false}
+          animate="visible"
           variants={staggerContainer}
           className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
         >

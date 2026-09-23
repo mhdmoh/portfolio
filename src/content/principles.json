@@ -1,22 +1,18 @@
 [
   {
-    "title": "Measure before you trust",
-    "description": "Before I ship a retrieval or ranking change, I want a labeled set of queries to compare it against."
-  },
-  {
-    "title": "Reliability beats cleverness",
-    "description": "I'd rather have a simple design that fails loudly than a clever one that fails silently."
+    "title": "Access control comes before the model",
+    "description": "If a user can't read a document, the model never sees it. Filtering the answer afterwards is too late."
   },
   {
     "title": "Humans own irreversible decisions",
-    "description": "For hiring decisions, client emails, and anything hard to undo, the model drafts and a person confirms."
+    "description": "The model drafts client emails and ranks candidates. A person reviews the draft and makes the hiring decision."
   },
   {
     "title": "Prefer deterministic over magical",
     "description": "LLMs suggest. Regular code validates the output, computes the scores, and decides what gets saved."
   },
   {
-    "title": "Keep the surface small",
-    "description": "I extract shared code the third time I repeat it. Building a framework too early costs more than a bit of duplication."
+    "title": "Pick the simplest design that works",
+    "description": "Single-step RAG when users don't need chat history. Simulated Annealing when it's easier to reason about than a genetic algorithm."
   }
 ]

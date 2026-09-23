@@ -3,6 +3,7 @@ import { z } from "zod";
 export const siteSchema = z.object({
   name: z.string(),
   role: z.string(),
+  experience: z.string(),
   mission: z.string(),
   description: z.string(),
   url: z.string(),

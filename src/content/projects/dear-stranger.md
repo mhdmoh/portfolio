@@ -3,28 +3,23 @@ title: Dear Stranger
 slug: dear-stranger
 category: products
 year: "2024"
-status: live
+status: in-progress
 featured: false
 published: true
 technologies: ["React", "TypeScript", "Python", "FastAPI", "PostgreSQL", "Stripe"]
-summary: A full-stack app for exchanging anonymous letters, built with React/TypeScript, FastAPI, PostgreSQL, and Stripe subscriptions. Moderation and privacy were harder than matching.
+summary: A full-stack app for exchanging anonymous letters that I'm building on my own, with React/TypeScript, FastAPI, PostgreSQL, and Stripe subscriptions. Moderation and privacy are harder than matching.
 order: 6
 ---
 
 ## What it is
 
-A web app for writing and receiving anonymous letters. Letters arrive with a delay on purpose, so it feels closer to real mail than to chat. I built all of it: the product, the API, payments, and moderation.
+A web app for writing and receiving anonymous letters. Letters arrive with a delay on purpose, so it feels closer to real mail than to chat. I'm building all of it myself: the product, the API, payments, and moderation. It's still in active development.
 
-```
+```flow
 React / TypeScript
-        │  REST
-        ▼
-   FastAPI (Python)
-        │
-   ┌────┴────┐
-   ▼         ▼
-PostgreSQL  Stripe
-            (subs + webhooks)
+FastAPI: REST + background jobs
+PostgreSQL
+Stripe: subscriptions + webhooks
 ```
 
 Auth uses JWT. Matching, delivery timing, and notifications run on the server as API calls and background jobs, not in the browser.
@@ -37,9 +32,9 @@ Auth uses JWT. Matching, delivery timing, and notifications run on the server as
 
 ## Hard problems
 
-**Anonymity and abuse.** Anonymity makes spam and abuse easy. Rate limits, automated moderation, and a review queue for unclear cases mattered more than the matching algorithm.
+**Anonymity and abuse.** Anonymity makes spam and abuse easy. Rate limits, automated moderation, and a review queue for unclear cases matter more than the matching algorithm.
 
-**Subscriptions.** Most of the billing work was handling webhooks that arrive out of order or get retried. Stripe is the source of truth, and the local database syncs from it.
+**Subscriptions.** Most of the billing work is handling webhooks that arrive out of order or get retried. Stripe is the source of truth, and the local database syncs from it.
 
 **Delayed delivery.** Because letters are delivered later, scheduling and notifications are handled by background jobs and state machines on the server.
 

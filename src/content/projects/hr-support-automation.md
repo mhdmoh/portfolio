@@ -13,23 +13,13 @@ order: 4
 
 ## Flow
 
-```
-email
-  │
-  ▼
-classify intent
-  │
-  ▼
-retrieve (docs / SAP / attachments)
-  │
-  ▼
+```flow
+Email
+Classify intent
+Retrieve context: docs / SAP / attachments
 ServiceNow ticket
-  │
-  ▼
-draft reply
-  │
-  ▼
-human review → send
+Draft reply
+Human review → send
 ```
 
 ## Why it works this way

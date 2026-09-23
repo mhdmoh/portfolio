@@ -40,5 +40,3 @@ export const pageTransition: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: EASE } },
   exit: { opacity: 0, y: -8, transition: { duration: 0.2, ease: EASE } },
 };
-
-export const viewportOnce = { once: true, margin: "-80px" } as const;

@@ -3,17 +3,28 @@ title: Workforce Scheduling Optimizer
 slug: workforce-scheduling-optimizer
 category: enterprise
 year: "2025"
-status: live
+status: in-progress
 featured: true
 published: true
 technologies: ["Python", "Simulated Annealing", "Excel"]
-summary: A Simulated Annealing scheduler for support shifts and breaks. Planning went from about 3 hours by hand to about 50 seconds, with a ready-to-use Excel file.
+summary: A Simulated Annealing scheduler for support shifts and breaks. It cuts planning from up to 3 hours by hand to about 50 seconds per schedule and outputs a ready-to-use Excel file.
 order: 1
+facts:
+  - label: Role
+    value: Solo, designed and built end to end
+  - label: Timeline
+    value: About 1 month
+  - label: Users
+    value: Internal planning team scheduling support staff for several client companies
+  - label: Status
+    value: Final testing before production
 ---
 
 ## What I built
 
-A scheduler for customer support teams that plans shifts, short breaks, and long breaks. Planners used to spend **3+ hours** on trial and error to get a workable plan. The optimizer does it in about **50 seconds** and outputs a formatted Excel file they can use directly.
+I built a scheduler for an internal planning team that staffs customer support for several client companies. It plans shifts, short breaks, and long breaks, and it runs every time the shifts change.
+
+Before this, the planner built each schedule by trial and error, trying to get the backlog as low as possible. A single schedule could take **up to 3 hours**, and there was no way to know whether a better one existed. The optimizer produces a schedule in about **50 seconds** and outputs a formatted Excel file they can use directly.
 
 There's no LLM involved. It's classical optimization against a configurable cost function.
 
@@ -34,22 +45,12 @@ The score balances several competing goals:
 
 The weights live in a config file, so each site can tune them without changing the code.
 
-```
-config + roster
-      │
-      ▼
-initial schedule
-      │
-      ▼
-Simulated Annealing
-      │
-  neighbour ←→ cost
-      │
-      ▼
-best schedule
-      │
-      ▼
-formatted Excel
+```flow
+Config + roster
+Initial schedule
+Simulated Annealing: neighbour moves ↔ cost
+Best schedule
+Formatted Excel
 ```
 
 ## Tradeoffs
@@ -66,8 +67,9 @@ Early versions gave too much weight to utilization. The schedules looked efficie
 
 ## Impact
 
-- Manual planning: **3+ hours**, depending on the planner's experience
-- Optimizer: **~50 seconds**, with the same result for the same inputs
+- Manual planning: **up to 3 hours** per schedule, by trial and error
+- Optimizer: **~50 seconds** per schedule, with the same result for the same inputs
+- Runs at **every shift change**, so faster planning adds up quickly
 - Output: an Excel file that needs **no manual formatting**
 
-The schedule isn't guaranteed to be the best possible one, but it meets the team's requirements and is fast enough to re-run whenever something changes.
+Unlike manual trial and error, the optimizer searches the options systematically for the lowest-cost schedule. It isn't guaranteed to find the best possible one, but it's fast enough to re-run whenever something changes. It's now in final testing before going into production.

@@ -10,6 +10,7 @@ export const projectCategorySchema = z.enum([
 export const projectStatusSchema = z.enum([
   "live",
   "in-progress",
+  "pilot",
   "archived",
   "concept",
 ]);
@@ -25,6 +26,8 @@ export const projectFrontmatterSchema = z.object({
   technologies: z.array(z.string()),
   summary: z.string(),
   cover: z.string().optional(),
+  /** Key facts shown under the title, e.g. Role, Timeline, Users. */
+  facts: z.array(z.object({ label: z.string(), value: z.string() })).optional(),
   order: z.number().default(0),
 });
 

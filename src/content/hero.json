@@ -1,7 +1,7 @@
 {
   "name": "Mohamad Mohamad",
-  "title": "AI Systems Engineer",
-  "description": "I build AI systems for enterprise teams: retrieval over internal knowledge, candidate ranking, and automation that plugs into ServiceNow and SAP. Most of my time goes into making them reliable after launch.",
+  "title": "AI & ML Engineer",
+  "description": "I build enterprise AI that's safe to deploy: RAG that respects who can see what, candidate ranking that runs on local models to keep data private, and optimization that turns hours of manual planning into seconds.",
   "portrait": "/images/portrait.jpg",
   "buttons": [
     {

@@ -5,7 +5,7 @@ category: research
 year: "2026"
 status: live
 featured: false
-published: true
+published: false
 technologies: ["Python", "PSO", "Swarm Intelligence", "Robotics"]
 summary: A PSO variant with Lévy flights, social attraction, and dispersal, tested up to 500 dimensions and on inverse kinematics for a 4+1 DoF arm. Published at ICCCI 2026 (Springer).
 order: 5

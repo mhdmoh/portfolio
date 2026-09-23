@@ -6,7 +6,7 @@ import { Section } from "@/components/common/section";
 import { PublicationCard } from "@/components/lab/publication-card";
 import { Tag } from "@/components/common/tag";
 import { routes } from "@/config/routes";
-import { slideUp, staggerContainer, viewportOnce } from "@/lib/animations";
+import { slideUp, staggerContainer } from "@/lib/animations";
 import { contentService } from "@/services/content";
 
 const lab = contentService.getLab();
@@ -60,9 +60,8 @@ export function LabPage() {
           Publications
         </h2>
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
+          initial={false}
+          animate="visible"
           variants={staggerContainer}
           className="mt-4 divide-y divide-border/70"
         >
@@ -78,11 +77,14 @@ export function LabPage() {
         <h2 className="font-mono text-xs tracking-[0.14em] text-muted-foreground uppercase">
           Open questions
         </h2>
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div className="mt-6 flex flex-wrap gap-x-2 gap-y-6">
           {lab.researchInterests.map((interest) => (
-            <Tag key={interest.label} className="px-3 py-1.5 text-xs" title={interest.description}>
-              {interest.label}
-            </Tag>
+            <div key={interest.label} className="w-full sm:w-[calc(50%-0.25rem)]">
+              <Tag className="px-3 py-1.5 text-xs">{interest.label}</Tag>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {interest.description}
+              </p>
+            </div>
           ))}
         </div>
       </Section>

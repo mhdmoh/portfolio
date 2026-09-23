@@ -21,8 +21,8 @@ import {
   publicationSchema,
 } from "@/schemas/publication";
 import { type Site, siteSchema } from "@/schemas/site";
+import { type SkillGroup, skillsSchema } from "@/schemas/skills";
 import { type SocialLink, socialSchema } from "@/schemas/social";
-import { type TimelineEvent, timelineSchema } from "@/schemas/timeline";
 
 import aboutJson from "@/content/about.json";
 import assetsJson from "@/content/assets.json";
@@ -33,8 +33,8 @@ import labJson from "@/content/lab.json";
 import navigationJson from "@/content/navigation.json";
 import principlesJson from "@/content/principles.json";
 import siteJson from "@/content/site.json";
+import skillsJson from "@/content/skills.json";
 import socialJson from "@/content/social.json";
-import timelineJson from "@/content/timeline.json";
 
 /**
  * The content service is the single gateway to all website content.
@@ -91,7 +91,7 @@ const social: SocialLink[] = parseOrThrow(socialSchema, socialJson, "social.json
   (link) => ({ ...link, href: fileHref(link.href) }),
 );
 const experience: ExperienceEntry[] = parseOrThrow(experienceSchema, experienceJson, "experience.json");
-const timeline: TimelineEvent[] = parseOrThrow(timelineSchema, timelineJson, "timeline.json");
+const skills: SkillGroup[] = parseOrThrow(skillsSchema, skillsJson, "skills.json");
 const principles: Principle[] = parseOrThrow(principlesSchema, principlesJson, "principles.json");
 const aboutRaw: About = parseOrThrow(aboutSchema, aboutJson, "about.json");
 const about: About = { ...aboutRaw, portrait: withBase(aboutRaw.portrait) };
@@ -143,8 +143,8 @@ export const contentService = {
   getNavigation: (): Navigation => navigation,
   getSocialLinks: (): SocialLink[] => social,
   getExperience: (): ExperienceEntry[] => experience,
-  getTimeline: (): TimelineEvent[] => timeline,
   getPrinciples: (): Principle[] => principles,
+  getSkills: (): SkillGroup[] => skills,
   getAbout: (): About => about,
   getContact: (): Contact => contact,
   getLab: (): Lab => lab,

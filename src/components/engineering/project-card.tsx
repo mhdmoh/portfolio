@@ -7,8 +7,9 @@ import { slideUp } from "@/lib/animations";
 import type { Project } from "@/schemas/project";
 
 const statusLabel: Record<Project["status"], string> = {
-  live: "Live",
+  live: "In production",
   "in-progress": "In Progress",
+  pilot: "Pilot",
   archived: "Archived",
   concept: "Concept",
 };

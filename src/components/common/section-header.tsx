@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { slideUp, viewportOnce } from "@/lib/animations";
+import { slideUp } from "@/lib/animations";
 import { cn } from "@/lib/utils";
 
 interface SectionHeaderProps {
@@ -24,9 +24,8 @@ export function SectionHeader({
 
   return (
     <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={viewportOnce}
+      initial={false}
+      animate="visible"
       variants={slideUp}
       className={cn("max-w-2xl", align === "center" && "mx-auto text-center", className)}
     >

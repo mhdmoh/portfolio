@@ -1,7 +1,19 @@
+import { isValidElement, type ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
+import { FlowDiagram } from "@/components/common/flow-diagram";
 import { cn } from "@/lib/utils";
+
+function FlowOrPre({ children, ...props }: { children?: ReactNode }) {
+  if (
+    isValidElement<{ className?: string; children?: ReactNode }>(children) &&
+    children.props.className?.includes("language-flow")
+  ) {
+    return <FlowDiagram source={String(children.props.children)} />;
+  }
+  return <pre {...props}>{children}</pre>;
+}
 
 export function MarkdownRenderer({ content, className }: { content: string; className?: string }) {
   return (
@@ -20,7 +32,10 @@ export function MarkdownRenderer({ content, className }: { content: string; clas
         className,
       )}
     >
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{ pre: ({ node: _node, ...props }) => <FlowOrPre {...props} /> }}
+      >{content}</ReactMarkdown>
     </div>
   );
 }

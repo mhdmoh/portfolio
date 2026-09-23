@@ -16,7 +16,7 @@
   "researchInterests": [
     {
       "label": "Retrieval evaluation",
-      "description": "Building labeled query sets to measure RAG quality."
+      "description": "How to measure RAG quality without large labeled datasets."
     },
     {
       "label": "Agent observability",

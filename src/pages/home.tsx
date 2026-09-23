@@ -7,14 +7,13 @@ import { SectionHeader } from "@/components/common/section-header";
 import { ProjectPreview } from "@/components/engineering/project-card";
 import { Button } from "@/components/ui/button";
 import { routes } from "@/config/routes";
-import { fadeIn, slideFromLeft, slideUp, staggerContainer, viewportOnce } from "@/lib/animations";
+import { fadeIn, slideFromLeft, slideUp, staggerContainer } from "@/lib/animations";
 import { icons } from "@/lib/icons";
 import { contentService } from "@/services/content";
 
 const hero = contentService.getHero();
 const featuredProjects = contentService.getFeaturedProjects();
 const principles = contentService.getPrinciples();
-const timeline = contentService.getTimeline();
 const site = contentService.getSite();
 const contact = contentService.getContact();
 const publication = contentService.getPublication("social-attraction-pso");
@@ -58,7 +57,7 @@ export function HomePage() {
             variants={fadeIn}
             className="mt-4 font-mono text-sm text-muted-foreground"
           >
-            {site.currentRole.title} · {site.currentRole.company} · Budapest
+            {site.experience} · {site.currentRole.company} · Budapest
           </motion.p>
           <motion.div variants={slideFromLeft} className="mt-10 flex flex-wrap gap-3">
             {hero.buttons.map((button) => {
@@ -93,9 +92,8 @@ export function HomePage() {
           description="Production AI and optimization work: retrieval, ranking, scheduling, and automation."
         />
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
+          initial={false}
+          animate="visible"
           variants={staggerContainer}
           className="mt-12 divide-y divide-border/70 border-y border-border/70"
         >
@@ -123,9 +121,8 @@ export function HomePage() {
             description="Peer-reviewed research from my MSc at ELTE."
           />
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOnce}
+            initial={false}
+            animate="visible"
             variants={slideUp}
             className="mt-10"
           >
@@ -173,9 +170,8 @@ export function HomePage() {
           description="The rules I follow when building something for production."
         />
         <motion.ol
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
+          initial={false}
+          animate="visible"
           variants={staggerContainer}
           className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
         >
@@ -188,40 +184,6 @@ export function HomePage() {
               <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
                 {principle.description}
               </p>
-            </motion.li>
-          ))}
-        </motion.ol>
-      </Section>
-
-      <Section className="border-t border-border/70">
-        <SectionHeader eyebrow="Path" title="How I got here" />
-        <motion.ol
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-          variants={staggerContainer}
-          className="relative mt-12 max-w-2xl"
-        >
-          <div
-            aria-hidden
-            className="absolute top-2 bottom-2 left-[5px] w-px bg-border"
-          />
-          {timeline.map((event, index) => (
-            <motion.li
-              key={event.label}
-              variants={slideUp}
-              className="relative grid gap-1 py-5 pl-10 sm:grid-cols-[120px_1fr] sm:gap-6"
-            >
-              <span className="absolute top-7 left-0 size-2.5 rounded-full border-2 border-primary bg-background" />
-              <p className="font-mono text-xs text-muted-foreground sm:pt-1">
-                {String(index + 1).padStart(2, "0")} · {event.years}
-              </p>
-              <div>
-                <p className="font-medium tracking-tight">{event.label}</p>
-                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                  {event.description}
-                </p>
-              </div>
             </motion.li>
           ))}
         </motion.ol>

@@ -17,7 +17,6 @@ const categories: { value: Project["category"] | "all"; label: string }[] = [
   { value: "all", label: "All" },
   { value: "enterprise", label: "Enterprise" },
   { value: "products", label: "Products" },
-  { value: "research", label: "Research" },
   { value: "mobile", label: "Mobile Archive" },
 ];
 
