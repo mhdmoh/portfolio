@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <!-- Quiet technical texture: nodes and connectors  systems, not gadgets -->
+  <g fill="none" stroke="#9ec8ff" stroke-width="1" opacity="1">
+    <circle cx="20" cy="20" r="2.5"/>
+    <circle cx="60" cy="18" r="2"/>
+    <circle cx="100" cy="24" r="2.5"/>
+    <circle cx="18" cy="60" r="2"/>
+    <circle cx="58" cy="58" r="3"/>
+    <circle cx="98" cy="62" r="2"/>
+    <circle cx="24" cy="100" r="2.5"/>
+    <circle cx="62" cy="98" r="2"/>
+    <circle cx="100" cy="96" r="2.5"/>
+    <path d="M20 20 L60 18 M60 18 L100 24 M20 20 L18 60 M18 60 L58 58 M58 58 L98 62 M100 24 L98 62 M18 60 L24 100 M58 58 L62 98 M98 62 L100 96 M24 100 L62 98 M62 98 L100 96"/>
+    <rect x="42" y="42" width="32" height="32" rx="2" opacity="0.5"/>
+  </g>
+</svg>
