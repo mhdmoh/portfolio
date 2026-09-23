@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { cn } from "@/lib/utils";
+import { cn, withBase } from "@/lib/utils";
 
 /**
  * Global studio atmosphere: pattern veil + soft ambient light.
@@ -59,7 +59,7 @@ export function Atmosphere({ className }: { className?: string }) {
       <div
         className="absolute inset-0 opacity-[0.045] dark:opacity-[0.055]"
         style={{
-          backgroundImage: "url(/images/pattern.svg)",
+          backgroundImage: `url(${withBase("/images/pattern.svg")})`,
           backgroundRepeat: "repeat",
           backgroundSize: "120px 120px",
         }}

@@ -90,7 +90,7 @@ export function HomePage() {
         <SectionHeader
           eyebrow="Work"
           title="Engineering"
-          description="Production systems — optimization, retrieval, ranking. The interesting part is usually the constraints."
+          description="Production AI and optimization work: retrieval, ranking, scheduling, and automation."
         />
         <motion.div
           initial="hidden"
@@ -120,7 +120,7 @@ export function HomePage() {
           <SectionHeader
             eyebrow="Research"
             title="Publication"
-            description="Peer-reviewed work alongside industry engineering."
+            description="Peer-reviewed research from my MSc at ELTE."
           />
           <motion.div
             initial="hidden"
@@ -170,7 +170,7 @@ export function HomePage() {
         <SectionHeader
           eyebrow="Practice"
           title="Engineering principles"
-          description="How I actually decide when something has to ship."
+          description="The rules I follow when building something for production."
         />
         <motion.ol
           initial="hidden"

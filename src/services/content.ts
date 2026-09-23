@@ -1,5 +1,7 @@
 import fm from "front-matter";
 
+import { isStaticFile, withBase } from "@/lib/utils";
+
 import { aboutSchema, type About } from "@/schemas/about";
 import { assetsSchema, type Assets } from "@/schemas/assets";
 import { contactSchema, type Contact } from "@/schemas/contact";
@@ -80,17 +82,37 @@ function loadMarkdownCollection<T>(
   });
 }
 
+/** Rewrite file links (e.g. "/resume.pdf") to include the deploy base; leave routes alone. */
+const fileHref = (href: string) => (isStaticFile(href) ? withBase(href) : href);
+
 const site: Site = parseOrThrow(siteSchema, siteJson, "site.json");
 const navigation: Navigation = parseOrThrow(navigationSchema, navigationJson, "navigation.json");
-const social: SocialLink[] = parseOrThrow(socialSchema, socialJson, "social.json");
+const social: SocialLink[] = parseOrThrow(socialSchema, socialJson, "social.json").map(
+  (link) => ({ ...link, href: fileHref(link.href) }),
+);
 const experience: ExperienceEntry[] = parseOrThrow(experienceSchema, experienceJson, "experience.json");
 const timeline: TimelineEvent[] = parseOrThrow(timelineSchema, timelineJson, "timeline.json");
 const principles: Principle[] = parseOrThrow(principlesSchema, principlesJson, "principles.json");
-const about: About = parseOrThrow(aboutSchema, aboutJson, "about.json");
-const contact: Contact = parseOrThrow(contactSchema, contactJson, "contact.json");
+const aboutRaw: About = parseOrThrow(aboutSchema, aboutJson, "about.json");
+const about: About = { ...aboutRaw, portrait: withBase(aboutRaw.portrait) };
+const contactRaw: Contact = parseOrThrow(contactSchema, contactJson, "contact.json");
+const contact: Contact = { ...contactRaw, resumeHref: withBase(contactRaw.resumeHref) };
 const lab: Lab = parseOrThrow(labSchema, labJson, "lab.json");
-const assets: Assets = parseOrThrow(assetsSchema, assetsJson, "assets.json");
-const hero: Hero = parseOrThrow(heroSchema, heroJson, "hero.json");
+const assetsRaw: Assets = parseOrThrow(assetsSchema, assetsJson, "assets.json");
+const assets: Assets = {
+  ...assetsRaw,
+  profilePhoto: withBase(assetsRaw.profilePhoto),
+  aboutPhoto: withBase(assetsRaw.aboutPhoto),
+  logo: withBase(assetsRaw.logo),
+  resume: withBase(assetsRaw.resume),
+  ogImage: withBase(assetsRaw.ogImage),
+};
+const heroRaw: Hero = parseOrThrow(heroSchema, heroJson, "hero.json");
+const hero: Hero = {
+  ...heroRaw,
+  portrait: withBase(heroRaw.portrait),
+  buttons: heroRaw.buttons.map((button) => ({ ...button, href: fileHref(button.href) })),
+};
 
 const projects: Project[] = loadMarkdownCollection(
   projectFiles,

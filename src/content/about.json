@@ -1,15 +1,27 @@
 {
   "biography": [
-    "I started in mobile engineering and spent years shipping software that had to keep working after release. That habit stuck. When something fails in production, I care less about the clever part and more about whether we can see it, measure it, and fix it.",
-    "I moved into AI because the interesting problems stopped being the screen and started being the system — retrieval, permissions, evaluation, integrations with tools people already use. At TCS Hungary I work on those problems every day: ServiceNow knowledge, scheduling optimizers, ranking pipelines. The model is rarely the hard part.",
-    "I'm also doing an MSc in AI at ELTE in Budapest. Industry work keeps me honest about what ships; research forces me to measure carefully. The Social Attraction PSO paper came out of that overlap."
+    "I started as a mobile developer and spent a few years as a senior engineer shipping Flutter and native apps for enterprise clients. That work taught me to care about what happens after release: monitoring, debugging, and fixing things quickly when they break.",
+    "In 2025 I moved into AI as an AI & ML Engineer at TCS Hungary. I build RAG systems over ServiceNow knowledge, agent workflows connected to SAP SuccessFactors and ServiceNow, a candidate ranking platform, and a workforce scheduling optimizer. Most of the effort goes into retrieval quality, permissions, and integrations rather than the model itself.",
+    "I'm also doing an MSc in Computer Science with an AI specialization at ELTE in Budapest. There I co-authored a paper on Social Attraction PSO, a swarm optimization method, published at ICCCI 2026."
   ],
   "portrait": "/images/portrait.jpg",
   "interests": [
-    { "label": "Running", "description": "Long runs when a bug won't leave my head." },
-    { "label": "Reading", "description": "Engineering books, systems writing, novels." },
-    { "label": "Hiking", "description": "Trails without signal." },
-    { "label": "Volleyball", "description": "Weekly games with a local team." }
+    {
+      "label": "Running",
+      "description": "Mostly easy runs around Budapest."
+    },
+    {
+      "label": "Reading",
+      "description": "Engineering books and novels."
+    },
+    {
+      "label": "Hiking",
+      "description": "Weekend trails when I can get out of the city."
+    },
+    {
+      "label": "Volleyball",
+      "description": "A regular game when I have the time."
+    }
   ],
   "openSource": [
     {

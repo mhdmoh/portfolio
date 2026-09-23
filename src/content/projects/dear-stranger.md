@@ -7,13 +7,13 @@ status: live
 featured: false
 published: true
 technologies: ["React", "TypeScript", "Python", "FastAPI", "PostgreSQL", "Stripe"]
-summary: Full-stack anonymous letter exchange — React/TypeScript frontend, FastAPI + PostgreSQL backend, Stripe subscriptions. Moderation and privacy were harder than matching.
+summary: A full-stack app for exchanging anonymous letters, built with React/TypeScript, FastAPI, PostgreSQL, and Stripe subscriptions. Moderation and privacy were harder than matching.
 order: 6
 ---
 
 ## What it is
 
-A web app for writing and receiving anonymous letters. Slow by design. I built it end to end: product, API, payments, moderation.
+A web app for writing and receiving anonymous letters. Letters arrive with a delay on purpose, so it feels closer to real mail than to chat. I built all of it: the product, the API, payments, and moderation.
 
 ```
 React / TypeScript
@@ -27,22 +27,22 @@ PostgreSQL  Stripe
             (subs + webhooks)
 ```
 
-Auth uses JWT. Matching, letter delivery timing, and notifications run through the API and background work rather than living in the client.
+Auth uses JWT. Matching, delivery timing, and notifications run on the server as API calls and background jobs, not in the browser.
 
 ## Why this stack
 
-- **React + TypeScript** for a maintainable web UI (this is not a mobile app).
-- **FastAPI + PostgreSQL** for a clear REST surface and relational modelling of users, letters, matches, and entitlements.
-- **Stripe subscriptions + webhooks** so billing state is driven by Stripe events, not optimistic client flags.
+- **React + TypeScript** for a web UI that's easy to maintain.
+- **FastAPI + PostgreSQL** for a clear REST API and a relational model of users, letters, matches, and subscriptions.
+- **Stripe subscriptions and webhooks**, so billing status comes from Stripe events rather than from the client.
 
 ## Hard problems
 
-**Anonymity vs abuse.** You want distance; attackers want free spam. Rate limits, automated moderation, and a review queue for edge cases mattered more than the matching algorithm.
+**Anonymity and abuse.** Anonymity makes spam and abuse easy. Rate limits, automated moderation, and a review queue for unclear cases mattered more than the matching algorithm.
 
-**Subscriptions.** Webhook ordering and retries are the real billing work. Treat Stripe as source of truth; reconcile locally.
+**Subscriptions.** Most of the billing work was handling webhooks that arrive out of order or get retried. Stripe is the source of truth, and the local database syncs from it.
 
-**Delayed delivery.** Letters are not chat. Scheduling and notification timing are product constraints that show up as jobs and state machines, not UI tricks.
+**Delayed delivery.** Because letters are delivered later, scheduling and notifications are handled by background jobs and state machines on the server.
 
 ## Tradeoffs
 
-Firebase would have been faster to prototype. I chose a stack I can reason about for auth, data, and money — accepting more upfront backend work.
+Firebase would have been faster for a prototype. I chose a stack where I fully control auth, data, and payments, even though it meant more backend work up front.

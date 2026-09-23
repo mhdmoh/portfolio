@@ -1,10 +1,18 @@
 {
   "name": "Mohamad Mohamad",
   "title": "AI Systems Engineer",
-  "description": "I build production AI systems where reliability matters more than demos — retrieval, permissions, evaluation, and the parts that break after the happy path.",
+  "description": "I build AI systems for enterprise teams: retrieval over internal knowledge, candidate ranking, and automation that plugs into ServiceNow and SAP. Most of my time goes into making them reliable after launch.",
   "portrait": "/images/portrait.jpg",
   "buttons": [
-    { "label": "Engineering", "href": "/engineering", "variant": "primary" },
-    { "label": "Resume", "href": "/resume.pdf", "variant": "secondary" }
+    {
+      "label": "Engineering",
+      "href": "/engineering",
+      "variant": "primary"
+    },
+    {
+      "label": "Resume",
+      "href": "/resume.pdf",
+      "variant": "secondary"
+    }
   ]
 }

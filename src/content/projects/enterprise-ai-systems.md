@@ -6,18 +6,18 @@ year: "2025"
 status: live
 featured: true
 published: true
-technologies: ["Capability Matching", "Hybrid Scoring", "Explainable Ranking"]
-summary: Rank candidates against one role or across many — semantic capability matching plus deterministic scoring, so recruiters can inspect the ranking instead of trusting an LLM.
+technologies: ["Python", "FastAPI", "LangChain", "Chroma", "FAISS", "Ollama"]
+summary: Ranks candidates against one role or across several, using semantic capability matching plus deterministic scoring so recruiters can see why each candidate ranked where they did.
 order: 3
 ---
 
 ## Why I built it this way
 
-Recruiters needed rankings they could explain in a calibration meeting. Keyword matching misses transferable skills when a résumé and a job description use different words for the same capability. Pure LLM scoring is hard to audit — it can look confident and still be inconsistent across runs.
+Recruiters needed rankings they could explain to hiring managers. Keyword matching misses candidates whose résumé describes the same skill in different words. Scoring purely with an LLM is hard to audit, and the results can change between runs.
 
-I structured both jobs and résumés into capabilities first, then matched and scored. Semantic understanding stays in the picture; consistency comes from deterministic rules on top.
+So I first convert both job descriptions and résumés into structured capabilities, then match and score them. The LLM handles understanding the text; deterministic rules keep the scores consistent.
 
-Upload one or more job descriptions and résumés. Rank against a single position, or cross-match candidates across multiple open roles.
+Recruiters upload one or more job descriptions and résumés, then rank candidates for a single role or compare them across several open roles.
 
 ## Architecture
 
@@ -39,43 +39,40 @@ hybrid scoring
 LLM + deterministic rules
         │
         ▼
-rankings + hiring insights
+rankings + fit summaries
 ```
+
+The backend is an async FastAPI service that handles résumé ingestion, job parsing, ranking, cross-job ranking, and automated interview emails. Embeddings are stored in Chroma or FAISS, and the LLM steps can run on local models through Ollama or LM Studio.
 
 ## Structured extraction
 
-Documents become structured capabilities before any ranking happens — not raw text blobs.
+Before ranking, each document is turned into a list of capabilities with normalized names, weights, parent/child relationships, and synonyms. This lets related skills count toward a match (for example, React and a related frontend skill) without treating them as identical.
 
-That includes normalized capability labels, weighted requirements, parent/child relationships, and synonym expansion. Matching runs on that graph so “React” and a related frontend skill can relate without pretending they are identical.
+LLM output doesn't always come back in the expected format, so every extraction goes through JSON validation and repair before it enters the pipeline.
 
-## Matching
+## Scoring
 
-Ranking combines semantic similarity, capability overlap, weighted requirements, and deterministic calibration.
-
-LLMs provide understanding. Deterministic scoring provides consistency.
+The final score combines semantic similarity, capability overlap, requirement weights, and deterministic calibration. Experience only counts when it's relevant to the role.
 
 ## Outputs
 
-More than a single score:
-
 - ranked candidates
-- explainable fit summaries
-- capability overlap
+- a short fit summary for each candidate
+- matched capabilities
 - missing core requirements
 - skill gaps and comparison metrics
-- recruiter-facing insights
 
 ## Tradeoffs
 
-| Rejected | Chose | Why |
+| Instead of | I chose | Why |
 | --- | --- | --- |
-| Pure keyword matching | Capability graph | Handles synonymous and related skills |
-| Pure LLM scoring | Hybrid scoring | Rankings stay consistent and auditable |
-| Flat skill lists | Structured capabilities | Preserves relationships and importance |
-| Black-box recommendations | Explainable summaries | Recruiters can understand every ranking |
+| Keyword matching | Capability graph | Handles synonyms and related skills |
+| LLM-only scoring | Hybrid scoring | Rankings stay consistent and auditable |
+| Flat skill lists | Structured capabilities | Keeps relationships and importance |
+| Unexplained scores | Fit summaries | Recruiters can see the reasoning |
 
 ## What went wrong
 
-Raw LLM extraction produced inconsistent structures. Validation had to run before anything entered the ranking pipeline.
+Raw LLM extraction returned inconsistent structures, so validation had to happen before ranking.
 
-Semantic similarity alone over-ranked buzzword overlap. Calibration rules became necessary after we watched real shortlists go wrong — especially on cross-job matching.
+Semantic similarity on its own ranked candidates too high when they just repeated the right buzzwords. We added calibration rules after seeing bad shortlists in real use, especially when matching candidates across multiple roles.

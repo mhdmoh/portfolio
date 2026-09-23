@@ -37,7 +37,7 @@ export function EngineeringPage() {
         <PageHeader
           eyebrow="Work"
           title="Engineering"
-          description="Case studies. Major ones go deep; smaller ones stay short."
+          description="Case studies of production and personal projects."
         />
 
         <div

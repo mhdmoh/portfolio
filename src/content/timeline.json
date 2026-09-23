@@ -1,6 +1,17 @@
 [
-  { "label": "Mobile & product", "years": "2019–", "description": "Shipped production apps and published redacted on pub.dev." },
-  { "label": "Senior ownership", "years": "2021–", "description": "Owned architecture and releases when breakage had real users." },
-  { "label": "AI systems", "years": "2025–", "description": "Enterprise RAG, scheduling optimization, ranking — same shipping bar." },
-  { "label": "Research", "years": "2024–", "description": "MSc at ELTE. Social Attraction PSO at ICCCI 2026." }
+  {
+    "label": "Mobile development",
+    "years": "2021–2025",
+    "description": "Senior mobile developer shipping Flutter and native apps for enterprise clients. Published the redacted package on pub.dev."
+  },
+  {
+    "label": "MSc in AI",
+    "years": "2024–",
+    "description": "Started the MSc in Computer Science (AI) at ELTE. Co-authored Social Attraction PSO, published at ICCCI 2026."
+  },
+  {
+    "label": "AI engineering",
+    "years": "2025–",
+    "description": "AI & ML Engineer at TCS Hungary: RAG, agent workflows, ranking, and scheduling optimization."
+  }
 ]

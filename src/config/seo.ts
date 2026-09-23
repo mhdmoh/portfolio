@@ -13,7 +13,7 @@ const assets = contentService.getAssets();
 
 export function buildMetadata(page: PageMetadata) {
   const title = page.path === "/" ? site.name : `${page.title} — ${site.name}`;
-  const url = new URL(page.path, site.url).toString();
+  const url = `${site.url}${page.path === "/" ? "/" : page.path}`;
   const image = new URL(page.image ?? assets.ogImage, site.url).toString();
 
   return {

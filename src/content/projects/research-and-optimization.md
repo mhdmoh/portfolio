@@ -7,20 +7,20 @@ status: live
 featured: false
 published: true
 technologies: ["Python", "PSO", "Swarm Intelligence", "Robotics"]
-summary: PSO variant with Lévy-flight, social attraction, and dispersal — benchmarks to 500D; IK on a 4+1 DoF arm. ICCCI 2026 / Springer.
+summary: A PSO variant with Lévy flights, social attraction, and dispersal, tested up to 500 dimensions and on inverse kinematics for a 4+1 DoF arm. Published at ICCCI 2026 (Springer).
 order: 5
 ---
 
 ## In short
 
-With collaborators at ELTE I worked on **Social Attraction PSO**: Lévy-flight, social attraction velocity updates, boosting weak particles, periodic dispersal. Compared against PSO, ICSO, and Firefly on Sphere / Ackley / Griewank / Rastrigin / Rosenbrock at **10 / 50 / 500** dimensions, plus a particle/iteration grid search. Also applied to **4+1 DoF** inverse kinematics.
+With co-authors at ELTE I worked on **Social Attraction PSO**, which adds Lévy flights, a social attraction velocity update, a boost for weaker particles, and periodic dispersal to standard PSO. We compared it with PSO, ICSO, and Firefly on the Sphere, Ackley, Griewank, Rastrigin, and Rosenbrock functions at **10, 50, and 500** dimensions, and ran a grid search over particle count and iterations. We also applied it to inverse kinematics for a **4+1 DoF** robotic arm.
 
 Paper: [ICCCI 2026 · Springer CCIS 3044](https://link.springer.com/chapter/10.1007/978-3-032-37936-8_1)
 
 ## What surprised us
 
-Synthetic wins did not transfer cleanly to IK. Joint limits changed which runs looked good — useful, because it stopped overselling the robotics section.
+The strong benchmark results didn't fully carry over to inverse kinematics. Joint limits changed which runs performed well, which kept us honest about the robotics results.
 
-## Open
+## Open question
 
-How much of the gain is Lévy-flight vs dispersal vs social attraction? Ablation is still on my list.
+We don't yet know how much of the improvement comes from each part (Lévy flights, dispersal, or social attraction). An ablation study is still on my list.

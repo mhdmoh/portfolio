@@ -2,17 +2,17 @@
 title: Mobile Engineering Archive
 slug: mobile-archive
 category: mobile
-year: "2019"
+year: "2021"
 status: archived
 featured: false
 published: true
 technologies: ["Flutter", "Dart", "Native iOS", "Native Android"]
-summary: Years shipping production mobile apps — and redacted on pub.dev.
+summary: Three years as a senior mobile developer, plus redacted, an open-source Flutter package on pub.dev.
 order: 7
 ---
 
 ## Notes
 
-Before AI work I shipped Flutter and native apps for enterprise clients. The durable public piece is [redacted](https://pub.dev/packages/redacted): loading skeletons from your own widgets.
+From 2021 to 2025 I built Flutter and native apps for enterprise clients as a senior mobile developer. My main public work from that time is [redacted](https://pub.dev/packages/redacted), a Flutter package that generates loading skeletons from your existing widgets.
 
-**Habit that stuck:** extract shared code after the third repetition; keep public APIs small. Release discipline and debugging under pressure transferred more cleanly into AI systems work than any framework detail.
+What carried over into AI work wasn't a framework. It was release discipline, debugging under pressure, and keeping shared code small: I extract it the third time I repeat something.

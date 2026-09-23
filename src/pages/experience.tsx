@@ -15,14 +15,14 @@ export function ExperiencePage() {
       <Seo
         path={routes.experience}
         title="Experience"
-        description="What each role changed in how I build software."
+        description="My roles so far, and what each one taught me."
       />
 
       <Section className="pt-12 md:pt-16">
         <PageHeader
           eyebrow="Work"
           title="Experience"
-          description="What I shipped, and what stuck."
+          description="What I built in each role and what I learned."
         />
 
         <motion.div

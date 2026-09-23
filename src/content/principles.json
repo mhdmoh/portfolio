@@ -1,22 +1,22 @@
 [
   {
     "title": "Measure before you trust",
-    "description": "I don't ship a retrieval or ranking change without something to compare against — labeled queries beat demos."
+    "description": "Before I ship a retrieval or ranking change, I want a labeled set of queries to compare it against."
   },
   {
     "title": "Reliability beats cleverness",
-    "description": "A boring design that fails loudly is worth more than a clever one that fails silently."
+    "description": "I'd rather have a simple design that fails loudly than a clever one that fails silently."
   },
   {
     "title": "Humans own irreversible decisions",
-    "description": "Hiring, client email, payments — models draft; people confirm."
+    "description": "For hiring decisions, client emails, and anything hard to undo, the model drafts and a person confirms."
   },
   {
     "title": "Prefer deterministic over magical",
-    "description": "LLMs propose. Code validates, scores, and decides what is allowed to stick."
+    "description": "LLMs suggest. Regular code validates the output, computes the scores, and decides what gets saved."
   },
   {
     "title": "Keep the surface small",
-    "description": "I extract shared code after the third repetition. Premature frameworks cost more than duplication."
+    "description": "I extract shared code the third time I repeat it. Building a framework too early costs more than a bit of duplication."
   }
 ]

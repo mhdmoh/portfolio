@@ -18,7 +18,7 @@ export function LabPage() {
       <Seo
         path={routes.lab}
         title="Lab"
-        description="Degree research and publications — including Social Attraction PSO at ICCCI 2026."
+        description="MSc research and publications, including Social Attraction PSO at ICCCI 2026."
       />
 
       <Section className="pt-12 md:pt-16">

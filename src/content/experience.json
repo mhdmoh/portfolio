@@ -5,35 +5,38 @@
     "location": "Budapest, Hungary",
     "start": "Jun 2025",
     "end": "Present",
-    "mission": "Ship AI into enterprise products that already have users, SLAs, and messy data.",
+    "mission": "Build AI features for enterprise HR and support systems that already have real users and messy data.",
     "responsibilities": [
-      "Built RAG over ServiceNow with permission-aware retrieval and citations.",
-      "Designed a Simulated Annealing workforce scheduler (~3 hours of manual planning → ~50 seconds).",
-      "Built hybrid ranking for recruitment — semantic retrieval plus deterministic scores.",
-      "Wired agent workflows into SAP and ServiceNow with tracing and human review on outbound actions."
+      "Built RAG systems with LangChain and LangGraph, including permission-aware retrieval over ServiceNow knowledge with citations.",
+      "Built agentic workflows with tool calling, integrated with SAP SuccessFactors and ServiceNow REST APIs.",
+      "Built an HR support system that classifies emails, creates ServiceNow tickets, and drafts replies for human review.",
+      "Designed a recruitment ranking platform combining semantic matching with deterministic scoring (FastAPI, Chroma/FAISS, local LLMs).",
+      "Built a Simulated Annealing workforce scheduler that cut planning from about 3 hours to about 50 seconds.",
+      "Used LangSmith for tracing and evaluation, Azure AI services for backend work, and prototyped features with the Gemini API."
     ],
-    "growth": "I stopped treating demos as progress. If it can't be evaluated or rolled back, it isn't finished.",
+    "growth": "I now judge AI work by whether it can be evaluated and rolled back, not by how well it demos.",
     "lessons": [
-      "Most failures show up at boundaries — APIs, documents, tickets — not in the model card.",
-      "If you can't explain a score or a draft to a reviewer, don't ship it."
+      "Most problems show up in the integrations (APIs, documents, tickets), not in the model.",
+      "If I can't explain a score or a draft to the person reviewing it, it isn't ready to ship."
     ]
   },
   {
-    "company": "Production Software",
+    "company": "Enterprise mobile apps",
     "role": "Senior Mobile Developer",
     "location": "Budapest, Hungary",
     "start": "Oct 2021",
     "end": "Jan 2025",
-    "mission": "Ship and maintain production apps under release pressure.",
+    "mission": "Build and maintain production mobile apps for enterprise clients.",
     "responsibilities": [
-      "Owned shared libraries and performance-sensitive surfaces.",
-      "Ran CI/CD and releases for client apps that couldn't afford casual breakage.",
-      "Published redacted on pub.dev after rebuilding the same skeleton UI once too often."
+      "Designed modular app architectures and optimized performance-critical screens.",
+      "Owned shared libraries used across multiple apps.",
+      "Ran CI/CD pipelines and releases, and handled backend integration.",
+      "Published redacted, an open-source Flutter package for loading skeletons, on pub.dev."
     ],
-    "growth": "I learned to prefer operable designs over clever ones. That preference transferred intact into AI work.",
+    "growth": "I learned to choose designs that are easy to run and debug over ones that are clever. That still guides how I build AI systems.",
     "lessons": [
-      "You find out what your architecture is worth the week after launch.",
-      "Frameworks change. Shipping habits don't."
+      "The weeks after a release show how good the architecture really is.",
+      "Frameworks change, but good release habits carry over."
     ]
   }
 ]
