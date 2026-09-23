@@ -1,3 +1,11 @@
+# Dependencies
+node_modules
+
+# Build
+dist
+dist-ssr
+*.local
+
 # Logs
 logs
 *.log
@@ -7,12 +15,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
+# Editor / OS
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -22,6 +25,22 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+Thumbs.db
 
-# Internal planning docs (not part of the shipped site)
+# Cursor / Claude local agent files
+.claude/
+.cursor/
+
+# Internal design & planning docs (not part of the shipped site)
+portfolio-design-system/
 /docs
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Coverage / caches
+coverage
+.cache
+*.tsbuildinfo
