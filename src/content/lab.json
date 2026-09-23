@@ -1,0 +1,23 @@
+{
+  "thesis": {
+    "title": "MSc Computer Science — Artificial Intelligence",
+    "institution": "Eötvös Loránd University (ELTE), Budapest",
+    "overview": "Formal depth in optimization and intelligent systems, in parallel with production AI work at TCS.",
+    "objectives": [
+      "Publish reproducible results, not just narratives.",
+      "Test swarm ideas on problems with a real cost (e.g. inverse kinematics).",
+      "Bring evaluation habits from research back into production retrieval."
+    ],
+    "timeline": "2024 — 2027",
+    "progress": "Social Attraction PSO at ICCCI 2026 (Springer CCIS 3044). Next: thesis work."
+  },
+  "experiments": [],
+  "researchNotes": [],
+  "researchInterests": [
+    { "label": "Retrieval evaluation", "description": "Labeled sets and failure modes demos hide." },
+    { "label": "Agent observability", "description": "Tracing multi-step tools mid-failure." },
+    { "label": "Swarm optimization", "description": "Exploration under high dimension." },
+    { "label": "Robotics / IK", "description": "Where optimizer claims meet joint limits." },
+    { "label": "Hybrid ranking", "description": "LLM signals calibrated by deterministic scores." }
+  ]
+}

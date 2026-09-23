@@ -1,0 +1,6 @@
+[
+  { "label": "GitHub", "href": "https://github.com/MhdMoh", "icon": "github" },
+  { "label": "LinkedIn", "href": "https://linkedin.com/in/mohamadmohamad", "icon": "linkedin" },
+  { "label": "Email", "href": "mailto:mhd.nidal.mhd@gmail.com", "icon": "email" },
+  { "label": "Resume", "href": "/resume.pdf", "icon": "resume" }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "company": "TCS Hungary",
+    "role": "AI & ML Engineer",
+    "location": "Budapest, Hungary",
+    "start": "Jun 2025",
+    "end": "Present",
+    "mission": "Ship AI into enterprise products that already have users, SLAs, and messy data.",
+    "responsibilities": [
+      "Built RAG over ServiceNow with permission-aware retrieval and citations.",
+      "Designed a Simulated Annealing workforce scheduler (~3 hours of manual planning → ~50 seconds).",
+      "Built hybrid ranking for recruitment — semantic retrieval plus deterministic scores.",
+      "Wired agent workflows into SAP and ServiceNow with tracing and human review on outbound actions."
+    ],
+    "growth": "I stopped treating demos as progress. If it can't be evaluated or rolled back, it isn't finished.",
+    "lessons": [
+      "Most failures show up at boundaries — APIs, documents, tickets — not in the model card.",
+      "If you can't explain a score or a draft to a reviewer, don't ship it."
+    ]
+  },
+  {
+    "company": "Production Software",
+    "role": "Senior Mobile Developer",
+    "location": "Budapest, Hungary",
+    "start": "Oct 2021",
+    "end": "Jan 2025",
+    "mission": "Ship and maintain production apps under release pressure.",
+    "responsibilities": [
+      "Owned shared libraries and performance-sensitive surfaces.",
+      "Ran CI/CD and releases for client apps that couldn't afford casual breakage.",
+      "Published redacted on pub.dev after rebuilding the same skeleton UI once too often."
+    ],
+    "growth": "I learned to prefer operable designs over clever ones. That preference transferred intact into AI work.",
+    "lessons": [
+      "You find out what your architecture is worth the week after launch.",
+      "Frameworks change. Shipping habits don't."
+    ]
+  }
+]

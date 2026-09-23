@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#014035"/>
+  <circle cx="980" cy="120" r="280" fill="#6bbf78" opacity="0.08"/>
+  <text x="80" y="290" font-family="ui-sans-serif, system-ui, sans-serif" font-size="56" font-weight="500" fill="#ffffff">Mohamad Mohamad</text>
+  <text x="80" y="350" font-family="ui-monospace, monospace" font-size="24" fill="#a8b8b2">AI Systems Engineer</text>
+  <text x="80" y="520" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" fill="#6bbf78">Intelligent software · Production systems</text>
+</svg>

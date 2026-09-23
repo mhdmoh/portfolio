@@ -1,0 +1,16 @@
+{
+  "name": "Mohamad Mohamad",
+  "role": "AI Systems Engineer",
+  "mission": "Build software people can trust — including systems that use models.",
+  "description": "Production AI engineer. Retrieval, agents, enterprise integrations. Mobile background. MSc AI at ELTE, Budapest.",
+  "url": "https://mhdmoh.github.io/my_portfolio",
+  "locale": "en-US",
+  "currentRole": {
+    "title": "AI & ML Engineer",
+    "company": "TCS Hungary"
+  },
+  "currentFocus": [
+    { "label": "Work", "value": "Enterprise RAG, scheduling optimization, and agent workflows at TCS." },
+    { "label": "Research", "value": "MSc AI at ELTE — swarm methods and what still breaks in production retrieval." }
+  ]
+}

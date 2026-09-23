@@ -1,0 +1,21 @@
+{
+  "biography": [
+    "I started in mobile engineering and spent years shipping software that had to keep working after release. That habit stuck. When something fails in production, I care less about the clever part and more about whether we can see it, measure it, and fix it.",
+    "I moved into AI because the interesting problems stopped being the screen and started being the system — retrieval, permissions, evaluation, integrations with tools people already use. At TCS Hungary I work on those problems every day: ServiceNow knowledge, scheduling optimizers, ranking pipelines. The model is rarely the hard part.",
+    "I'm also doing an MSc in AI at ELTE in Budapest. Industry work keeps me honest about what ships; research forces me to measure carefully. The Social Attraction PSO paper came out of that overlap."
+  ],
+  "portrait": "/images/portrait.jpg",
+  "interests": [
+    { "label": "Running", "description": "Long runs when a bug won't leave my head." },
+    { "label": "Reading", "description": "Engineering books, systems writing, novels." },
+    { "label": "Hiking", "description": "Trails without signal." },
+    { "label": "Volleyball", "description": "Weekly games with a local team." }
+  ],
+  "openSource": [
+    {
+      "name": "redacted",
+      "description": "Flutter package that builds loading skeletons from your own widgets. On pub.dev.",
+      "href": "https://pub.dev/packages/redacted"
+    }
+  ]
+}

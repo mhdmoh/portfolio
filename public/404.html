@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portfolio</title>
+    <script>
+      // Single-page app fallback for GitHub Pages project sites.
+      // Stores the deep link, then loads the app root so React Router can restore it.
+      sessionStorage.redirect = location.href;
+      location.replace("/my_portfolio/");
+    </script>
+  </head>
+  <body></body>
+</html>

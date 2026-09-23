@@ -1,0 +1,18 @@
+{
+  "primary": [
+    { "label": "Home", "href": "/" },
+    { "label": "Engineering", "href": "/engineering" },
+    { "label": "Lab", "href": "/lab" },
+    { "label": "Experience", "href": "/experience" },
+    { "label": "About", "href": "/about" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "mobile": [
+    { "label": "Home", "href": "/" },
+    { "label": "Engineering", "href": "/engineering" },
+    { "label": "Lab", "href": "/lab" },
+    { "label": "Experience", "href": "/experience" },
+    { "label": "About", "href": "/about" }
+  ],
+  "cta": { "label": "Contact", "href": "/contact" }
+}

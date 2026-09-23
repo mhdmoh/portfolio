@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Measure before you trust",
+    "description": "I don't ship a retrieval or ranking change without something to compare against — labeled queries beat demos."
+  },
+  {
+    "title": "Reliability beats cleverness",
+    "description": "A boring design that fails loudly is worth more than a clever one that fails silently."
+  },
+  {
+    "title": "Humans own irreversible decisions",
+    "description": "Hiring, client email, payments — models draft; people confirm."
+  },
+  {
+    "title": "Prefer deterministic over magical",
+    "description": "LLMs propose. Code validates, scores, and decides what is allowed to stick."
+  },
+  {
+    "title": "Keep the surface small",
+    "description": "I extract shared code after the third repetition. Premature frameworks cost more than duplication."
+  }
+]
