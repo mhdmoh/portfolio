@@ -1,0 +1,1 @@
+import{l as e,u as t}from"./index-2u0XZLAe.js";var n=e();function r({children:e,className:r,title:i}){return(0,n.jsx)(`span`,{title:i,className:t(`inline-flex items-center rounded-full border border-primary/35 bg-primary/10 px-2.5 py-0.5 font-mono text-[11px] text-primary`,r),children:e})}export{r as t};
