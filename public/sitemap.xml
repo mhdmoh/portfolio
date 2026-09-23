@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://mohamadmohamad.com/</loc></url>
-  <url><loc>https://mohamadmohamad.com/engineering</loc></url>
-  <url><loc>https://mohamadmohamad.com/lab</loc></url>
-  <url><loc>https://mohamadmohamad.com/experience</loc></url>
-  <url><loc>https://mohamadmohamad.com/about</loc></url>
-  <url><loc>https://mohamadmohamad.com/contact</loc></url>
+  <url><loc>https://mhdmoh.github.io/portfolio/</loc></url>
+  <url><loc>https://mhdmoh.github.io/portfolio/engineering</loc></url>
+  <url><loc>https://mhdmoh.github.io/portfolio/lab</loc></url>
+  <url><loc>https://mhdmoh.github.io/portfolio/experience</loc></url>
+  <url><loc>https://mhdmoh.github.io/portfolio/about</loc></url>
+  <url><loc>https://mhdmoh.github.io/portfolio/contact</loc></url>
+  <url><loc>https://mhdmoh.github.io/portfolio/engineering/dear-stranger</loc></url>
+  <url><loc>https://mhdmoh.github.io/portfolio/engineering/enterprise-ai-systems</loc></url>
+  <url><loc>https://mhdmoh.github.io/portfolio/engineering/hr-support-automation</loc></url>
+  <url><loc>https://mhdmoh.github.io/portfolio/engineering/mobile-archive</loc></url>
+  <url><loc>https://mhdmoh.github.io/portfolio/engineering/permission-aware-knowledge-retrieval</loc></url>
+  <url><loc>https://mhdmoh.github.io/portfolio/engineering/research-and-optimization</loc></url>
+  <url><loc>https://mhdmoh.github.io/portfolio/engineering/workforce-scheduling-optimizer</loc></url>
+  <url><loc>https://mhdmoh.github.io/portfolio/lab/publications/social-attraction-pso</loc></url>
 </urlset>
