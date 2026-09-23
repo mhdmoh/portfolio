@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mohamadmohamad.com/sitemap.xml
+Sitemap: https://mhdmoh.github.io/portfolio/sitemap.xml
