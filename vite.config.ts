@@ -3,9 +3,9 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
-// Project Pages URL: https://mhdmoh.github.io/portfolio/
+// Custom domain: https://www.mhdmoh.com
 export default defineConfig({
-  base: "/portfolio/",
+  base: "/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

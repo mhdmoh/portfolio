@@ -1,10 +1,10 @@
 export { cn } from "cn"
 
 /**
- * Prefix a root-relative file path from /public with the deploy base
- * ("/portfolio/" on GitHub Pages). Route paths are handled by the router
- * basename, so only call this for static files. Other URLs pass through.
+ * Prefix a root-relative file path from /public with the deploy base.
+ * With a custom domain, BASE_URL is "/". Route paths use the router basename.
  */
+
 export function withBase(path: string): string {
   if (!path.startsWith("/") || path.startsWith("//")) return path
   return `${import.meta.env.BASE_URL}${path.slice(1)}`
