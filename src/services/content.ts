@@ -1,5 +1,6 @@
 import fm from "front-matter";
 
+import { experienceLabel } from "@/lib/career";
 import { isStaticFile, withBase } from "@/lib/utils";
 
 import { aboutSchema, type About } from "@/schemas/about";
@@ -91,7 +92,11 @@ function loadMarkdownCollection<T>(
 /** Rewrite file links (e.g. "/resume.pdf") to include the deploy base; leave routes alone. */
 const fileHref = (href: string) => (isStaticFile(href) ? withBase(href) : href);
 
-const site: Site = parseOrThrow(siteSchema, siteJson, "site.json");
+const siteRaw = parseOrThrow(siteSchema, siteJson, "site.json");
+const site: Site = {
+  ...siteRaw,
+  experience: experienceLabel(siteRaw.careerStart, siteRaw.experiencePhrase),
+};
 const navigation: Navigation = parseOrThrow(navigationSchema, navigationJson, "navigation.json");
 const social: SocialLink[] = parseOrThrow(socialSchema, socialJson, "social.json").map(
   (link) => ({ ...link, href: fileHref(link.href) }),
@@ -128,6 +133,10 @@ const heroRaw: Hero = parseOrThrow(heroSchema, heroJson, "hero.json");
 const hero: Hero = {
   ...heroRaw,
   portrait: withBase(heroRaw.portrait),
+  proof: [
+    experienceLabel(siteRaw.careerStart, "software engineering"),
+    ...(heroRaw.proof ?? []),
+  ],
   buttons: heroRaw.buttons.map((button) => ({ ...button, href: fileHref(button.href) })),
 };
 
