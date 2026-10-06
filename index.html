@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f5f7f6" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#014035" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f7f6" />
     <title>Mohamad Mohamad — AI &amp; ML Engineer</title>
     <script>
       (function () {
@@ -18,29 +17,17 @@
           }
         } catch (e) {}
 
+        // Light theme only — clear any previously stored dark preference
         try {
-          var stored = localStorage.getItem("portfolio-theme");
-          var mode =
-            stored === "light" || stored === "dark" || stored === "system"
-              ? stored
-              : "system";
-          var resolved =
-            mode === "system"
-              ? window.matchMedia("(prefers-color-scheme: dark)").matches
-                ? "dark"
-                : "light"
-              : mode;
-          if (resolved === "dark") {
-            document.documentElement.classList.add("dark");
-            document.documentElement.style.colorScheme = "dark";
-          } else {
-            document.documentElement.style.colorScheme = "light";
-          }
+          document.documentElement.classList.remove("dark");
+          document.documentElement.style.colorScheme = "light";
+          localStorage.removeItem("portfolio-theme");
         } catch (e) {}
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-CY0VF2rw.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-C99ZTZKB.css">
+    <script type="module" crossorigin src="/assets/index---7gbKiE.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/content-CMjpyZq6.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-lBLPOxyF.css">
   </head>
   <body>
     <div id="root"></div>
