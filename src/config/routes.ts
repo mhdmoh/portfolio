@@ -5,6 +5,7 @@ export const routes = {
   lab: "/lab",
   experience: "/experience",
   about: "/about",
+  certificates: "/certificates",
   contact: "/contact",
   publicationDetail: (slug: string) => `/lab/publications/${slug}`,
 } as const;
@@ -16,6 +17,7 @@ export const routePatterns = {
   lab: "/lab",
   experience: "/experience",
   about: "/about",
+  certificates: "/certificates",
   contact: "/contact",
   publicationDetail: "/lab/publications/:slug",
   notFound: "*",

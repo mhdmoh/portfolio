@@ -4,6 +4,11 @@ import { isStaticFile, withBase } from "@/lib/utils";
 
 import { aboutSchema, type About } from "@/schemas/about";
 import { assetsSchema, type Assets } from "@/schemas/assets";
+import {
+  certificatesContentSchema,
+  type Certificate,
+  type CertificatesContent,
+} from "@/schemas/certificate";
 import { contactSchema, type Contact } from "@/schemas/contact";
 import { type ExperienceEntry, experienceSchema } from "@/schemas/experience";
 import { type Hero, heroSchema } from "@/schemas/hero";
@@ -26,6 +31,7 @@ import { type SocialLink, socialSchema } from "@/schemas/social";
 
 import aboutJson from "@/content/about.json";
 import assetsJson from "@/content/assets.json";
+import certificatesJson from "@/content/certificates.json";
 import contactJson from "@/content/contact.json";
 import experienceJson from "@/content/experience.json";
 import heroJson from "@/content/hero.json";
@@ -95,6 +101,17 @@ const skills: SkillGroup[] = parseOrThrow(skillsSchema, skillsJson, "skills.json
 const principles: Principle[] = parseOrThrow(principlesSchema, principlesJson, "principles.json");
 const aboutRaw: About = parseOrThrow(aboutSchema, aboutJson, "about.json");
 const about: About = { ...aboutRaw, portrait: withBase(aboutRaw.portrait) };
+const certificatesRaw: CertificatesContent = parseOrThrow(
+  certificatesContentSchema,
+  certificatesJson,
+  "certificates.json",
+);
+const certificates: CertificatesContent = {
+  ...certificatesRaw,
+  items: certificatesRaw.items
+    .map((item) => ({ ...item, image: withBase(item.image) }))
+    .sort((a, b) => a.order - b.order),
+};
 const contactRaw: Contact = parseOrThrow(contactSchema, contactJson, "contact.json");
 const contact: Contact = { ...contactRaw, resumeHref: withBase(contactRaw.resumeHref) };
 const lab: Lab = parseOrThrow(labSchema, labJson, "lab.json");
@@ -146,6 +163,9 @@ export const contentService = {
   getPrinciples: (): Principle[] => principles,
   getSkills: (): SkillGroup[] => skills,
   getAbout: (): About => about,
+  getCertificates: (): CertificatesContent => certificates,
+  getCertificate: (slug: string): Certificate | undefined =>
+    certificates.items.find((certificate) => certificate.slug === slug),
   getContact: (): Contact => contact,
   getLab: (): Lab => lab,
   getAssets: (): Assets => assets,

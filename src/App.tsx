@@ -20,6 +20,9 @@ const ExperiencePage = lazy(() =>
   import("@/pages/experience").then((m) => ({ default: m.ExperiencePage })),
 );
 const AboutPage = lazy(() => import("@/pages/about").then((m) => ({ default: m.AboutPage })));
+const CertificatesPage = lazy(() =>
+  import("@/pages/certificates").then((m) => ({ default: m.CertificatesPage })),
+);
 const ContactPage = lazy(() =>
   import("@/pages/contact").then((m) => ({ default: m.ContactPage })),
 );
@@ -42,6 +45,7 @@ function App() {
                 <Route path="lab/publications/:slug" element={<PublicationDetailPage />} />
                 <Route path="experience" element={<ExperiencePage />} />
                 <Route path="about" element={<AboutPage />} />
+                <Route path="certificates" element={<CertificatesPage />} />
                 <Route path="contact" element={<ContactPage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Route>

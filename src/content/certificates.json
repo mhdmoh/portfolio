@@ -1,0 +1,235 @@
+{
+  "description": "Selected certificates from my continued learning across AI, software engineering, data, and languages.",
+  "items": [
+    {
+      "slug": "langchain-langgraph",
+      "title": "LangChain — Develop AI Agents with LangChain & LangGraph",
+      "provider": "Udemy",
+      "year": "2025",
+      "category": "ai-ml",
+      "image": "/images/certificates/langchain-langgraph.jpg",
+      "alt": "Certificate of completion for LangChain and LangGraph AI agents course from Udemy",
+      "order": 1
+    },
+    {
+      "slug": "generative-ai-gans-to-clip",
+      "title": "Generative AI, from GANs to CLIP, with Python and Pytorch",
+      "provider": "Udemy",
+      "year": "2025",
+      "category": "ai-ml",
+      "image": "/images/certificates/generative-ai-gans-to-clip.jpg",
+      "alt": "Certificate of completion for Generative AI from GANs to CLIP course from Udemy",
+      "order": 2
+    },
+    {
+      "slug": "transformers-computer-vision",
+      "title": "Advanced AI: Transformers for Computer Vision",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "ai-ml",
+      "image": "/images/certificates/transformers-computer-vision.jpg",
+      "alt": "Certificate of completion for Advanced AI Transformers for Computer Vision from LinkedIn Learning",
+      "order": 3
+    },
+    {
+      "slug": "openai-api-chatgpt",
+      "title": "Introduction to OpenAI API & ChatGPT API for Developers",
+      "provider": "Udemy",
+      "year": "2025",
+      "category": "ai-ml",
+      "image": "/images/certificates/openai-api-chatgpt.jpg",
+      "alt": "Certificate of completion for Introduction to OpenAI API and ChatGPT API from Udemy",
+      "order": 4
+    },
+    {
+      "slug": "chatgpt-prompt-writing",
+      "title": "ChatGPT Prompt Writing: The Complete Guide",
+      "provider": "Udemy",
+      "year": "2025",
+      "category": "ai-ml",
+      "image": "/images/certificates/chatgpt-prompt-writing.jpg",
+      "alt": "Certificate of completion for ChatGPT Prompt Writing from Udemy",
+      "order": 5
+    },
+    {
+      "slug": "prompt-engineering-generative-ai",
+      "title": "Introduction to Prompt Engineering for Generative AI",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "ai-ml",
+      "image": "/images/certificates/prompt-engineering-generative-ai.jpg",
+      "alt": "Certificate of completion for Introduction to Prompt Engineering for Generative AI from LinkedIn Learning",
+      "order": 6
+    },
+    {
+      "slug": "chatgpt-generative-ai-content",
+      "title": "How to use ChatGPT and Generative AI to help create content",
+      "provider": "Udemy",
+      "year": "2025",
+      "category": "ai-ml",
+      "image": "/images/certificates/chatgpt-generative-ai-content.jpg",
+      "alt": "Certificate of completion for ChatGPT and Generative AI content course from Udemy",
+      "order": 7
+    },
+    {
+      "slug": "ai-bible-chatgpt-midjourney",
+      "title": "ChatGPT, Midjourney, ChatGPT 4, & DallE — The AI Bible",
+      "provider": "Udemy",
+      "year": "2025",
+      "category": "ai-ml",
+      "image": "/images/certificates/ai-bible-chatgpt-midjourney.jpg",
+      "alt": "Certificate of completion for The AI Bible ChatGPT Midjourney and DallE course from Udemy",
+      "order": 8
+    },
+    {
+      "slug": "what-is-generative-ai",
+      "title": "What Is Generative AI?",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "ai-ml",
+      "image": "/images/certificates/what-is-generative-ai.jpg",
+      "alt": "Certificate of completion for What Is Generative AI from LinkedIn Learning",
+      "order": 9
+    },
+    {
+      "slug": "discover-generative-ai",
+      "title": "Discover the Possibilities of Generative AI",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "ai-ml",
+      "image": "/images/certificates/discover-generative-ai.jpg",
+      "alt": "Certificate of completion for Discover the Possibilities of Generative AI from LinkedIn Learning",
+      "order": 10
+    },
+    {
+      "slug": "learning-github-actions",
+      "title": "Learning GitHub Actions",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "software",
+      "image": "/images/certificates/learning-github-actions.jpg",
+      "alt": "Certificate of completion for Learning GitHub Actions from LinkedIn Learning",
+      "order": 11
+    },
+    {
+      "slug": "python-essential-training",
+      "title": "Python Essential Training",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "software",
+      "image": "/images/certificates/python-essential-training.jpg",
+      "alt": "Certificate of completion for Python Essential Training from LinkedIn Learning",
+      "order": 12
+    },
+    {
+      "slug": "learning-linux-command-line",
+      "title": "Learning Linux Command Line",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "software",
+      "image": "/images/certificates/learning-linux-command-line.jpg",
+      "alt": "Certificate of completion for Learning Linux Command Line from LinkedIn Learning",
+      "order": 13
+    },
+    {
+      "slug": "linux-shells-and-processes",
+      "title": "Linux: Shells and Processes",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "software",
+      "image": "/images/certificates/linux-shells-and-processes.jpg",
+      "alt": "Certificate of completion for Linux Shells and Processes from LinkedIn Learning",
+      "order": 14
+    },
+    {
+      "slug": "data-science-foundations-fundamentals",
+      "title": "Data Science Foundations: Fundamentals",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "data",
+      "image": "/images/certificates/data-science-foundations-fundamentals.jpg",
+      "alt": "Certificate of completion for Data Science Foundations Fundamentals from LinkedIn Learning",
+      "order": 15
+    },
+    {
+      "slug": "data-engineering-foundations",
+      "title": "Data Engineering Foundations",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "data",
+      "image": "/images/certificates/data-engineering-foundations.jpg",
+      "alt": "Certificate of completion for Data Engineering Foundations from LinkedIn Learning",
+      "order": 16
+    },
+    {
+      "slug": "data-science-foundations-data-engineering",
+      "title": "Data Science Foundations: Data Engineering",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "data",
+      "image": "/images/certificates/data-science-foundations-data-engineering.jpg",
+      "alt": "Certificate of completion for Data Science Foundations Data Engineering from LinkedIn Learning",
+      "order": 17
+    },
+    {
+      "slug": "sql-essential-training",
+      "title": "SQL Essential Training",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "data",
+      "image": "/images/certificates/sql-essential-training.jpg",
+      "alt": "Certificate of completion for SQL Essential Training from LinkedIn Learning",
+      "order": 18
+    },
+    {
+      "slug": "hands-on-sql-challenges",
+      "title": "Hands-On SQL Challenges: Test Your Knowledge",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "data",
+      "image": "/images/certificates/hands-on-sql-challenges.jpg",
+      "alt": "Certificate of completion for Hands-On SQL Challenges from LinkedIn Learning",
+      "order": 19
+    },
+    {
+      "slug": "learning-relational-databases",
+      "title": "Learning Relational Databases",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "data",
+      "image": "/images/certificates/learning-relational-databases.jpg",
+      "alt": "Certificate of completion for Learning Relational Databases from LinkedIn Learning",
+      "order": 20
+    },
+    {
+      "slug": "learning-power-bi-desktop",
+      "title": "Learning Power BI Desktop (2020)",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "data",
+      "image": "/images/certificates/learning-power-bi-desktop.jpg",
+      "alt": "Certificate of completion for Learning Power BI Desktop from LinkedIn Learning",
+      "order": 21
+    },
+    {
+      "slug": "introducing-jupyter",
+      "title": "Introducing Jupyter",
+      "provider": "LinkedIn Learning",
+      "year": "2025",
+      "category": "data",
+      "image": "/images/certificates/introducing-jupyter.jpg",
+      "alt": "Certificate of completion for Introducing Jupyter from LinkedIn Learning",
+      "order": 22
+    },
+    {
+      "slug": "nicos-weg-a1",
+      "title": "Nicos Weg — Einfach Deutsch lernen (A1)",
+      "provider": "DW Akademie",
+      "year": "2026",
+      "category": "languages",
+      "image": "/images/certificates/nicos-weg-a1.jpg",
+      "alt": "Abschlusszertifikat for Nicos Weg Einfach Deutsch lernen A1 from DW Akademie",
+      "order": 23
+    }
+  ]
+}

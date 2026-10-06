@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import { PageHeader } from "@/components/common/page-header";
 import { Seo } from "@/components/common/seo";
 import { Section } from "@/components/common/section";
+import { Button } from "@/components/ui/button";
 import { routes } from "@/config/routes";
 import { icons } from "@/lib/icons";
 import { slideUp, staggerContainer } from "@/lib/animations";
@@ -64,6 +66,14 @@ export function AboutPage() {
               </motion.div>
             ))}
           </motion.div>
+          <div className="mt-8">
+            <Button asChild variant="ghost" className="-ml-3">
+              <Link to={routes.certificates} className="inline-flex items-center gap-1.5">
+                View certificates
+                <icons.arrowRight className="size-4" />
+              </Link>
+            </Button>
+          </div>
         </Section>
       ) : null}
 

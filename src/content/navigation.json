@@ -5,6 +5,7 @@
     { "label": "Lab", "href": "/lab" },
     { "label": "Experience", "href": "/experience" },
     { "label": "About", "href": "/about" },
+    { "label": "Certificates", "href": "/certificates" },
     { "label": "Contact", "href": "/contact" }
   ],
   "mobile": [
@@ -12,7 +13,8 @@
     { "label": "Engineering", "href": "/engineering" },
     { "label": "Lab", "href": "/lab" },
     { "label": "Experience", "href": "/experience" },
-    { "label": "About", "href": "/about" }
+    { "label": "About", "href": "/about" },
+    { "label": "Certificates", "href": "/certificates" }
   ],
   "cta": { "label": "Contact", "href": "/contact" }
 }
