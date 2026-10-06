@@ -46,7 +46,7 @@ export function EngineeringDetailPage() {
         </Button>
 
         <p className="font-mono text-xs tracking-wide text-muted-foreground">
-          {project.year} · {statusLabel[project.status]}
+          {project.year} · {project.contextLabel ?? statusLabel[project.status]}
         </p>
 
         <h1 className="mt-4 text-4xl font-medium tracking-tight text-balance sm:text-5xl">

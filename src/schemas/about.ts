@@ -9,6 +9,14 @@ export const aboutSchema = z.object({
       description: z.string(),
     }),
   ),
+  continuousLearning: z
+    .array(
+      z.object({
+        label: z.string(),
+        description: z.string(),
+      }),
+    )
+    .optional(),
   openSource: z.array(
     z.object({
       name: z.string(),

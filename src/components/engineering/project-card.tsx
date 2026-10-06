@@ -14,6 +14,10 @@ const statusLabel: Record<Project["status"], string> = {
   concept: "Concept",
 };
 
+function projectMeta(project: Project) {
+  return `${project.year} · ${project.contextLabel ?? statusLabel[project.status]}`;
+}
+
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <motion.div variants={slideUp}>
@@ -21,7 +25,7 @@ export function ProjectCard({ project }: { project: Project }) {
         href={routes.engineeringDetail(project.slug)}
         title={project.title}
         description={project.summary}
-        meta={`${project.year} · ${statusLabel[project.status]}`}
+        meta={projectMeta(project)}
         tags={project.technologies.slice(0, 4)}
       />
     </motion.div>

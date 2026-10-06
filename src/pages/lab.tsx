@@ -31,27 +31,62 @@ export function LabPage() {
 
       <Section className="border-t border-border/70 pt-16 md:pt-20">
         <h2 className="font-mono text-xs tracking-[0.14em] text-muted-foreground uppercase">
-          Degree
+          Thesis
         </h2>
         <div className="mt-6 max-w-2xl">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <h3 className="text-2xl font-medium tracking-tight">{lab.thesis.title}</h3>
-            <span className="font-mono text-xs text-muted-foreground">{lab.thesis.timeline}</span>
+            <span className="font-mono text-xs text-muted-foreground">
+              {lab.thesis.status ?? "In Progress"}
+            </span>
           </div>
-          <p className="mt-1 text-sm text-muted-foreground">{lab.thesis.institution}</p>
+          {lab.thesis.focus ? (
+            <p className="mt-3 text-base leading-relaxed text-foreground">
+              {lab.thesis.focus}
+            </p>
+          ) : null}
+          <p className="mt-2 text-sm text-muted-foreground">{lab.thesis.institution}</p>
+          <p className="mt-1 font-mono text-xs text-muted-foreground">{lab.thesis.timeline}</p>
           <p className="mt-5 leading-relaxed text-muted-foreground">{lab.thesis.overview}</p>
-          <ul className="mt-5 space-y-2">
-            {lab.thesis.objectives.map((objective) => (
-              <li key={objective} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                <span className="mt-2 size-1 shrink-0 rounded-full bg-primary" />
-                {objective}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-6 text-sm leading-relaxed">
-            <span className="font-medium text-foreground">Status — </span>
-            <span className="text-muted-foreground">{lab.thesis.progress}</span>
-          </p>
+
+          <div className="mt-8 space-y-6 border-t border-border/70 pt-6">
+            <div>
+              <h4 className="font-mono text-xs tracking-[0.12em] text-muted-foreground uppercase">
+                Research objectives
+              </h4>
+              <ul className="mt-3 space-y-2">
+                {lab.thesis.objectives.map((objective) => (
+                  <li
+                    key={objective}
+                    className="flex gap-3 text-sm leading-relaxed text-muted-foreground"
+                  >
+                    <span className="mt-2 size-1 shrink-0 rounded-full bg-primary" />
+                    {objective}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {lab.thesis.currentDirection ? (
+              <div>
+                <h4 className="font-mono text-xs tracking-[0.12em] text-muted-foreground uppercase">
+                  Current direction
+                </h4>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {lab.thesis.currentDirection}
+                </p>
+              </div>
+            ) : null}
+
+            <div>
+              <h4 className="font-mono text-xs tracking-[0.12em] text-muted-foreground uppercase">
+                Status
+              </h4>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {lab.thesis.progress}
+              </p>
+            </div>
+          </div>
         </div>
       </Section>
 

@@ -14,9 +14,17 @@ link: "https://link.springer.com/chapter/10.1007/978-3-032-37936-8_1"
 summary: "PSO variant with Lévy-flight, social attraction, superior-particle enhancement, and dispersal. Benchmarked to 500D; applied to 4+1 DoF inverse kinematics."
 ---
 
-Co-authored with Márk Domonkos, Sharbel Kalloumah, and János Botzheim at ELTE.
+## Research context
 
-We proposed Social Attraction Particle Swarm Optimization, which combines Lévy-flight exploration, a social attraction velocity update, direct enhancement of weaker particles, and periodic random dispersal. Baselines were standard PSO, Improved Chicken Swarm Optimizer, and Firefly. Benchmarks were Sphere, Ackley, Griewank, Rastrigin, and Rosenbrock at 10, 50, and 500 dimensions, plus a grid search on particle count and iterations. We also ran inverse kinematics on a DIY robotic arm with 4+1 DoF.
+With co-authors at ELTE I worked on **Social Attraction PSO**, which adds Lévy flights, a social attraction velocity update, a boost for weaker particles, and periodic dispersal to standard PSO. The motivation was to improve exploration in high-dimensional search spaces, then test whether those gains transfer to a practical robotics problem.
+
+## Contribution
+
+Co-authored with Márk Domonkos, Sharbel Kalloumah, and János Botzheim at ELTE. We proposed the method, designed the benchmarks, and evaluated it against standard PSO, Improved Chicken Swarm Optimizer, and Firefly.
+
+## Method & evaluation
+
+Baselines were standard PSO, Improved Chicken Swarm Optimizer, and Firefly. Benchmarks were Sphere, Ackley, Griewank, Rastrigin, and Rosenbrock at 10, 50, and 500 dimensions, plus a grid search on particle count and iterations. We also ran inverse kinematics on a DIY robotic arm with 4+1 DoF.
 
 On these benchmarks the method outperformed the baselines. The robotics results were more mixed than the benchmark results, and the paper reports both.
 

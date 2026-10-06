@@ -4,6 +4,7 @@ slug: dear-stranger
 category: products
 year: "2024"
 status: in-progress
+contextLabel: Independent Product
 featured: false
 published: true
 technologies: ["React", "TypeScript", "Python", "FastAPI", "PostgreSQL", "Stripe"]

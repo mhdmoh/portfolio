@@ -20,24 +20,27 @@ facts:
     value: In production
 ---
 
-## Why it exists
+## Problem
 
 Finding the right ServiceNow knowledge article was slow. People searched manually or asked a colleague who remembered where it was. I built a Q&A system over the knowledge base so users can ask a question in plain language and get an answer with links to the articles it came from.
 
 The main requirement was security. Knowledge bases mix general articles with restricted ones, and the system must **never answer from an article the user isn't allowed to read**.
 
-## How access control works
+## Approach
 
 An admin creates the user accounts and gives each user an access level. Every article has a clearance level. When a user asks a question, only articles at or below their level are used to answer it.
 
 Each client sets up its own roles and levels, so the same system works for different organizations without code changes.
 
+The central rule: **authorization happens before generation.** Restricted content must not reach the model.
+
 ```flow
-Question: with the user's access level
-Search articles: FAISS
-Access filter: cleared articles only
-Generate answer
-Answer + citations
+User
+Access Context
+Retrieval
+Permission Filter
+LLM
+Cited Answer
 ```
 
 ## Key decisions

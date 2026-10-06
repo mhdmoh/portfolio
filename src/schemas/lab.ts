@@ -21,6 +21,10 @@ export const thesisSchema = z.object({
   objectives: z.array(z.string()),
   timeline: z.string(),
   progress: z.string(),
+  status: z.string().optional(),
+  /** Working thesis focus when distinct from the degree title. */
+  focus: z.string().optional(),
+  currentDirection: z.string().optional(),
 });
 
 export const researchInterestSchema = z.object({

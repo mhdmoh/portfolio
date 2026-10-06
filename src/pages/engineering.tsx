@@ -14,7 +14,7 @@ import { contentService } from "@/services/content";
 const projects = contentService.getProjects();
 
 const categories: { value: Project["category"] | "all"; label: string }[] = [
-  { value: "all", label: "All" },
+  { value: "all", label: "All Work" },
   { value: "enterprise", label: "Enterprise" },
   { value: "products", label: "Products" },
   { value: "mobile", label: "Mobile Archive" },
@@ -34,7 +34,7 @@ export function EngineeringPage() {
       />
       <Section className="pt-12 md:pt-16">
         <PageHeader
-          eyebrow="Work"
+          eyebrow="Selected Work"
           title="Engineering"
           description="Case studies of production and personal projects."
         />

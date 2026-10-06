@@ -1,7 +1,13 @@
 {
   "name": "Mohamad Mohamad",
-  "title": "AI & ML Engineer",
-  "description": "I build enterprise AI that's safe to deploy: RAG that respects who can see what, candidate ranking that runs on local models to keep data private, and optimization that turns hours of manual planning into seconds.",
+  "title": "AI Systems Engineer",
+  "description": "Building production-ready AI systems for real-world workflows — enterprise AI, permission-aware RAG, local LLM systems, intelligent automation, and optimization, grounded in years of shipping production software.",
+  "proof": [
+    "4+ years software engineering",
+    "AI & ML Engineer at TCS Hungary",
+    "MSc Computer Science — Artificial Intelligence",
+    "Published research"
+  ],
   "portrait": "/images/portrait.jpg",
   "buttons": [
     {

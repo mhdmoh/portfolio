@@ -44,9 +44,32 @@ export function AboutPage() {
         </div>
       </Section>
 
+      {about.continuousLearning && about.continuousLearning.length > 0 ? (
+        <Section className="border-t border-border/70">
+          <h2 className="font-mono text-xs tracking-[0.14em] text-muted-foreground uppercase">
+            Continuous Learning
+          </h2>
+          <motion.div
+            initial={false}
+            animate="visible"
+            variants={staggerContainer}
+            className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {about.continuousLearning.map((item) => (
+              <motion.div key={item.label} variants={slideUp}>
+                <h3 className="font-medium tracking-tight">{item.label}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </Section>
+      ) : null}
+
       <Section className="border-t border-border/70">
         <h2 className="font-mono text-xs tracking-[0.14em] text-muted-foreground uppercase">
-          Outside work
+          Outside Engineering
         </h2>
         <motion.div
           initial={false}

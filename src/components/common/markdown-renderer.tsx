@@ -2,15 +2,26 @@ import { isValidElement, type ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
+import { CompareBlock } from "@/components/common/compare-block";
 import { FlowDiagram } from "@/components/common/flow-diagram";
+import { SystemBoundaries } from "@/components/common/system-boundaries";
 import { cn } from "@/lib/utils";
 
-function FlowOrPre({ children, ...props }: { children?: ReactNode }) {
+function SpecialOrPre({ children, ...props }: { children?: ReactNode }) {
   if (
     isValidElement<{ className?: string; children?: ReactNode }>(children) &&
-    children.props.className?.includes("language-flow")
+    typeof children.props.className === "string"
   ) {
-    return <FlowDiagram source={String(children.props.children)} />;
+    const source = String(children.props.children ?? "");
+    if (children.props.className.includes("language-flow")) {
+      return <FlowDiagram source={source} />;
+    }
+    if (children.props.className.includes("language-compare")) {
+      return <CompareBlock source={source} />;
+    }
+    if (children.props.className.includes("language-boundaries")) {
+      return <SystemBoundaries source={source} />;
+    }
   }
   return <pre {...props}>{children}</pre>;
 }
@@ -34,8 +45,10 @@ export function MarkdownRenderer({ content, className }: { content: string; clas
     >
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
-        components={{ pre: ({ node: _node, ...props }) => <FlowOrPre {...props} /> }}
-      >{content}</ReactMarkdown>
+        components={{ pre: ({ node: _node, ...props }) => <SpecialOrPre {...props} /> }}
+      >
+        {content}
+      </ReactMarkdown>
     </div>
   );
 }

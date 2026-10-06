@@ -23,6 +23,20 @@
       "description": "A regular game when I have the time."
     }
   ],
+  "continuousLearning": [
+    {
+      "label": "MSc & research",
+      "description": "Coursework and research in AI at ELTE, including published work on swarm optimization."
+    },
+    {
+      "label": "Production AI engineering",
+      "description": "Learning from real systems: retrieval quality, permissions, scoring calibration, and enterprise integrations."
+    },
+    {
+      "label": "Experimentation",
+      "description": "Ongoing Lab work on retrieval evaluation, agent observability, and hybrid ranking."
+    }
+  ],
   "openSource": [
     {
       "name": "redacted",

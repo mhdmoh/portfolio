@@ -20,13 +20,23 @@ facts:
     value: Pilot
 ---
 
-## Why I built it this way
+## Problem
 
 Recruiters needed rankings they could explain to hiring managers. Keyword matching misses candidates whose résumé describes the same skill in different words. Scoring purely with an LLM is hard to audit, and the results can change between runs.
 
+Recruiters upload one or more job descriptions and résumés, then rank candidates for a single role or compare them across several open roles.
+
+## Approach
+
 So I first convert both job descriptions and résumés into structured capabilities, then match and score them. The LLM handles understanding the text; deterministic rules keep the scores consistent.
 
-Recruiters upload one or more job descriptions and résumés, then rank candidates for a single role or compare them across several open roles.
+```flow
+LLM extraction
+Capability graph
+Semantic matching
+Deterministic scoring
+Explainable ranking
+```
 
 ## Local models only
 
@@ -35,6 +45,13 @@ Résumés are personal data, and company policy doesn't allow sending them to on
 That ruled out the largest hosted models, which made the rest of the design matter more: structured extraction, validation, and deterministic scoring make up for what a smaller local model gets wrong.
 
 ## Architecture
+
+The pipeline separates four concerns that are easy to confuse:
+
+1. **LLM extraction** — turn free text into structured JSON (capabilities, weights, experience)
+2. **Validation & repair** — reject or fix invalid extraction before it enters ranking
+3. **Semantic matching** — capability graph + embeddings for related skills and synonyms
+4. **Deterministic scoring** — hybrid score with calibration rules; rankings stay consistent across runs
 
 ```flow
 Jobs + résumés
@@ -78,7 +95,7 @@ The final score combines semantic similarity, capability overlap, requirement we
 | LLM-only scoring | Hybrid scoring | Rankings stay consistent and auditable |
 | Unexplained scores | Fit summaries | Recruiters can see the reasoning |
 
-## What went wrong
+## Failure Modes & Calibration
 
 Raw LLM extraction returned inconsistent structures, so I added validation and repair before anything reaches the ranking step.
 

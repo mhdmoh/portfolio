@@ -1,6 +1,7 @@
 {
   "thesis": {
     "title": "MSc Computer Science — Artificial Intelligence",
+    "focus": "Swarm optimization methods applied to high-dimensional search and robotic inverse kinematics",
     "institution": "Eötvös Loránd University (ELTE), Budapest",
     "overview": "Coursework and research in optimization and intelligent systems, alongside my full-time AI work at TCS Hungary.",
     "objectives": [
@@ -9,7 +10,9 @@
       "Apply research evaluation methods to production retrieval systems."
     ],
     "timeline": "2024 — 2027",
-    "progress": "Co-authored Social Attraction PSO, published at ICCCI 2026 (Springer CCIS 3044). Thesis work is next."
+    "status": "In Progress",
+    "progress": "Co-authored Social Attraction PSO, published at ICCCI 2026 (Springer CCIS 3044). Thesis work is next.",
+    "currentDirection": "Building on the published Social Attraction PSO work toward the thesis, with continued focus on swarm methods under real constraints such as joint limits in inverse kinematics."
   },
   "experiments": [],
   "researchNotes": [],

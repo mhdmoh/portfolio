@@ -1,22 +1,22 @@
 [
   {
-    "label": "LLMs & RAG",
-    "items": ["LangChain", "LangGraph", "LangSmith", "RAG", "Agentic workflows", "Tool calling", "Embeddings", "Vector search", "Chroma", "FAISS", "Pinecone", "Ollama", "LM Studio"]
+    "label": "AI Systems",
+    "items": ["LangChain", "LangGraph", "RAG", "Agentic Workflows", "Tool Calling", "Vector Search"]
   },
   {
-    "label": "Machine learning",
-    "items": ["PyTorch", "scikit-learn", "NumPy", "Pandas", "CNNs", "RNNs / LSTMs", "NLP"]
+    "label": "Machine Learning",
+    "items": ["PyTorch", "scikit-learn", "NumPy", "Pandas"]
   },
   {
-    "label": "Backend & integration",
-    "items": ["Python", "FastAPI", "SQL", "REST APIs", "SAP SuccessFactors", "ServiceNow", "Microsoft Bot Framework"]
+    "label": "Backend & Integration",
+    "items": ["Python", "FastAPI", "SQL", "REST APIs"]
   },
   {
     "label": "Cloud",
-    "items": ["Azure OpenAI", "Azure AI Services", "Vertex AI", "Gemini API", "Cloud Run", "CI/CD"]
+    "items": ["Azure", "Vertex AI", "Cloud Run", "CI/CD"]
   },
   {
     "label": "Optimization",
-    "items": ["Simulated Annealing", "Particle swarm optimization"]
+    "items": ["Simulated Annealing", "Particle Swarm Optimization"]
   }
 ]

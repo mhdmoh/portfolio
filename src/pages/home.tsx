@@ -19,6 +19,10 @@ const contact = contentService.getContact();
 const publication = contentService.getPublication("social-attraction-pso");
 
 export function HomePage() {
+  const proofLine = hero.proof?.length
+    ? hero.proof.join(" · ")
+    : `${site.experience} · ${site.currentRole.company} · Budapest`;
+
   return (
     <>
       <Seo
@@ -49,15 +53,15 @@ export function HomePage() {
           </motion.h1>
           <motion.p
             variants={slideFromLeft}
-            className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-balance md:text-xl"
+            className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground text-balance md:text-xl"
           >
             {hero.description}
           </motion.p>
           <motion.p
             variants={fadeIn}
-            className="mt-4 font-mono text-sm text-muted-foreground"
+            className="mt-5 max-w-2xl font-mono text-xs leading-relaxed text-muted-foreground sm:text-sm"
           >
-            {site.experience} · {site.currentRole.company} · Budapest
+            {proofLine}
           </motion.p>
           <motion.div variants={slideFromLeft} className="mt-10 flex flex-wrap gap-3">
             {hero.buttons.map((button) => {
@@ -87,7 +91,7 @@ export function HomePage() {
 
       <Section className="border-t border-border/70">
         <SectionHeader
-          eyebrow="Work"
+          eyebrow="Selected Work"
           title="Engineering"
           description="Production AI and optimization work: retrieval, ranking, scheduling, and automation."
         />
@@ -124,41 +128,62 @@ export function HomePage() {
             initial={false}
             animate="visible"
             variants={slideUp}
-            className="mt-10"
+            className="mt-10 rounded-md border border-border/70 px-5 py-6 sm:px-6 sm:py-8"
           >
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-xs text-muted-foreground">
+              <span className="text-primary">Published</span>
+              <span aria-hidden>·</span>
+              <span>ICCCI 2026</span>
+              <span aria-hidden>·</span>
+              <span>Springer CCIS 3044</span>
+              <span aria-hidden>·</span>
+              <span>{publication.year}</span>
+            </div>
             <Link
               to={routes.publicationDetail(publication.slug)}
-              className="group -mx-3 flex flex-col gap-3 rounded-md px-3 py-6 transition-colors hover:bg-highlight sm:flex-row sm:items-start sm:justify-between sm:gap-10"
+              className="group mt-3 block"
             >
-              <div className="min-w-0 max-w-2xl">
-                <p className="font-mono text-xs text-muted-foreground">
-                  ICCCI 2026 · Springer CCIS 3044 · {publication.year}
-                </p>
-                <h3 className="mt-2 text-xl font-medium tracking-tight transition-colors group-hover:text-primary sm:text-2xl">
-                  {publication.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {publication.summary}
-                </p>
-                <p className="mt-3 text-sm text-muted-foreground">
-                  {publication.authors.join(", ")}
-                </p>
-              </div>
-              <span className="shrink-0 text-sm text-muted-foreground transition-colors group-hover:text-primary sm:pt-8">
-                Read →
-              </span>
+              <h3 className="text-xl font-medium tracking-tight transition-colors group-hover:text-primary sm:text-2xl">
+                {publication.title}
+              </h3>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                {publication.summary}
+              </p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                {publication.authors.join(", ")}
+              </p>
             </Link>
-            {publication.link ? (
-              <a
-                href={publication.link}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-2 inline-flex items-center gap-1.5 px-3 text-sm text-muted-foreground transition-colors hover:text-primary"
+            <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-t border-border/70 pt-4">
+              <Link
+                to={routes.publicationDetail(publication.slug)}
+                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-primary"
               >
-                Springer
-                <icons.arrowUpRight className="size-3.5" />
-              </a>
-            ) : null}
+                Case study
+                <icons.arrowRight className="size-3.5" />
+              </Link>
+              {publication.link ? (
+                <a
+                  href={publication.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Springer
+                  <icons.arrowUpRight className="size-3.5" />
+                </a>
+              ) : null}
+              {publication.doi ? (
+                <a
+                  href={`https://doi.org/${publication.doi}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
+                  DOI
+                  <icons.arrowUpRight className="size-3.5" />
+                </a>
+              ) : null}
+            </div>
           </motion.div>
         </Section>
       ) : null}
@@ -166,7 +191,7 @@ export function HomePage() {
       <Section className="border-t border-border/70">
         <SectionHeader
           eyebrow="Practice"
-          title="Engineering principles"
+          title="How I Engineer"
           description="The rules I follow when building something for production."
         />
         <motion.ol

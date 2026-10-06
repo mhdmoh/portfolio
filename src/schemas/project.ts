@@ -28,6 +28,8 @@ export const projectFrontmatterSchema = z.object({
   cover: z.string().optional(),
   /** Key facts shown under the title, e.g. Role, Timeline, Users. */
   facts: z.array(z.object({ label: z.string(), value: z.string() })).optional(),
+  /** Optional context label shown instead of status (e.g. Independent Product). */
+  contextLabel: z.string().optional(),
   order: z.number().default(0),
 });
 

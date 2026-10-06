@@ -48,24 +48,42 @@ export function PublicationDetailPage() {
           {publication.title}
         </h1>
         <p className="mt-4 text-muted-foreground">{publication.authors.join(", ")}</p>
+        <p className="mt-5 text-base leading-relaxed text-muted-foreground text-balance">
+          {publication.summary}
+        </p>
 
-        <div className="mt-12">
-          <MarkdownRenderer content={publication.body} />
+        <div className="mt-8 flex flex-wrap gap-3 border-y border-border/70 py-5">
+          {publication.link ? (
+            <Button asChild variant="outline" size="sm">
+              <a
+                href={publication.link}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2"
+              >
+                Springer
+                <icons.arrowUpRight className="size-3.5" />
+              </a>
+            </Button>
+          ) : null}
+          {publication.doi ? (
+            <Button asChild variant="outline" size="sm">
+              <a
+                href={`https://doi.org/${publication.doi}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2"
+              >
+                DOI
+                <icons.arrowUpRight className="size-3.5" />
+              </a>
+            </Button>
+          ) : null}
         </div>
 
-        {publication.link ? (
-          <Button asChild className="mt-10" variant="outline">
-            <a
-              href={publication.link}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2"
-            >
-              View on Springer
-              <icons.arrowUpRight className="size-4" />
-            </a>
-          </Button>
-        ) : null}
+        <div className="mt-10">
+          <MarkdownRenderer content={publication.body} />
+        </div>
       </Section>
     </>
   );
