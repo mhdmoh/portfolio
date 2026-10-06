@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Layout } from "@/components/layout/layout";
-import { ThemeProvider } from "@/hooks/use-theme";
 
 const HomePage = lazy(() => import("@/pages/home").then((m) => ({ default: m.HomePage })));
 const EngineeringPage = lazy(() =>
@@ -31,27 +30,25 @@ const NotFoundPage = lazy(() =>
 function App() {
   return (
     <HelmetProvider>
-      <ThemeProvider>
-        <TooltipProvider>
-          <BrowserRouter basename={import.meta.env.BASE_URL}>
-            <Suspense fallback={null}>
-              <Routes>
-                <Route element={<Layout />}>
-                  <Route index element={<HomePage />} />
-                  <Route path="engineering" element={<EngineeringPage />} />
-                  <Route path="engineering/:slug" element={<EngineeringDetailPage />} />
-                  <Route path="lab" element={<LabPage />} />
-                  <Route path="lab/publications/:slug" element={<PublicationDetailPage />} />
-                  <Route path="experience" element={<ExperiencePage />} />
-                  <Route path="about" element={<AboutPage />} />
-                  <Route path="contact" element={<ContactPage />} />
-                  <Route path="*" element={<NotFoundPage />} />
-                </Route>
-              </Routes>
-            </Suspense>
-          </BrowserRouter>
-        </TooltipProvider>
-      </ThemeProvider>
+      <TooltipProvider>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
+          <Suspense fallback={null}>
+            <Routes>
+              <Route element={<Layout />}>
+                <Route index element={<HomePage />} />
+                <Route path="engineering" element={<EngineeringPage />} />
+                <Route path="engineering/:slug" element={<EngineeringDetailPage />} />
+                <Route path="lab" element={<LabPage />} />
+                <Route path="lab/publications/:slug" element={<PublicationDetailPage />} />
+                <Route path="experience" element={<ExperiencePage />} />
+                <Route path="about" element={<AboutPage />} />
+                <Route path="contact" element={<ContactPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Route>
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </TooltipProvider>
     </HelmetProvider>
   );
 }

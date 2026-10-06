@@ -19,7 +19,7 @@ export function MarkdownRenderer({ content, className }: { content: string; clas
   return (
     <div
       className={cn(
-        "prose prose-neutral dark:prose-invert max-w-none",
+        "prose prose-neutral max-w-none",
         "prose-headings:font-medium prose-headings:tracking-tight",
         "prose-h2:mt-12 prose-h2:mb-4 prose-h2:text-2xl prose-h2:border-t prose-h2:border-border prose-h2:pt-10 first:prose-h2:mt-0 first:prose-h2:border-0 first:prose-h2:pt-0",
         "prose-p:text-muted-foreground prose-p:leading-relaxed",

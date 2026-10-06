@@ -57,7 +57,7 @@ export function Atmosphere({ className }: { className?: string }) {
       className={cn("pointer-events-none fixed inset-0 -z-10 overflow-hidden", className)}
     >
       <div
-        className="absolute inset-0 opacity-[0.045] dark:opacity-[0.055]"
+        className="absolute inset-0 opacity-[0.045]"
         style={{
           backgroundImage: `url(${withBase("/images/pattern.svg")})`,
           backgroundRepeat: "repeat",
@@ -66,7 +66,7 @@ export function Atmosphere({ className }: { className?: string }) {
       />
       <div
         ref={glowRef}
-        className="absolute inset-0 opacity-70 dark:opacity-100"
+        className="absolute inset-0 opacity-70"
         style={{
           background:
             "radial-gradient(ellipse 50vw 50vw at var(--gx, 50%) var(--gy, 28%), var(--glow), transparent 70%)",

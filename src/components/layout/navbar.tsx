@@ -7,8 +7,6 @@ import { icons } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 import { contentService } from "@/services/content";
 
-import { ThemeToggle } from "./theme-toggle";
-
 const navigation = contentService.getNavigation();
 const site = contentService.getSite();
 
@@ -97,7 +95,6 @@ export function Navbar() {
         />
 
         <div className="flex items-center gap-1.5">
-          <ThemeToggle />
           <Button asChild size="sm" className="hidden md:inline-flex">
             <NavLink to={navigation.cta.href}>{navigation.cta.label}</NavLink>
           </Button>

@@ -10,8 +10,6 @@ import {
   Link2,
   Mail,
   Menu,
-  Moon,
-  Sun,
   X,
   type LucideIcon,
 } from "lucide-react";
@@ -35,8 +33,6 @@ export const icons = {
   arrowUpRight: ArrowUpRight,
   menu: Menu,
   close: X,
-  sun: Sun,
-  moon: Moon,
   compass: Compass,
   flask: FlaskConical,
   build: Hammer,

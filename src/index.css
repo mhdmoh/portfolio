@@ -5,8 +5,6 @@
 @import "@fontsource-variable/geist";
 @import "@fontsource-variable/geist-mono";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
     --font-heading: var(--font-sans);
     --font-sans: 'Geist Variable', sans-serif;
@@ -54,10 +52,7 @@
 }
 
 /*
-  Portfolio V2 tokens — evolution of the forest-green identity.
-  Dark canvas inherits the original studio green (#014035).
-  Light theme is the day reading of the same brand, not a generic SaaS palette.
-  Accent is earned: interactive feedback + metadata, not large fills.
+  Light-only brand tokens — forest green accent on a cool green-tinted canvas.
 */
 :root {
     --background: #f5f7f6;
@@ -94,42 +89,7 @@
     --sidebar-accent-foreground: #0c1f1a;
     --sidebar-border: #d5e0db;
     --sidebar-ring: #0d4a3e;
-}
-
-.dark {
-    --background: #014035;
-    --foreground: #ffffff;
-    --card: rgba(255, 255, 255, 0.04);
-    --card-foreground: #ffffff;
-    --popover: #0a3830;
-    --popover-foreground: #ffffff;
-    --primary: #6bbf78;
-    --primary-foreground: #014035;
-    --secondary: rgba(255, 255, 255, 0.08);
-    --secondary-foreground: #ffffff;
-    --muted: rgba(255, 255, 255, 0.06);
-    --muted-foreground: #a8b8b2;
-    --accent: rgba(107, 191, 120, 0.12);
-    --accent-foreground: #ffffff;
-    --destructive: oklch(0.65 0.18 22);
-    --border: rgba(255, 255, 255, 0.1);
-    --input: rgba(255, 255, 255, 0.12);
-    --ring: #6bbf78;
-    --highlight: rgba(255, 255, 255, 0.078);
-    --glow: rgba(107, 191, 120, 0.1);
-    --chart-1: #6bbf78;
-    --chart-2: #4a9d5c;
-    --chart-3: #8fd49a;
-    --chart-4: #a8b8b2;
-    --chart-5: #ffffff;
-    --sidebar: #0a3830;
-    --sidebar-foreground: #ffffff;
-    --sidebar-primary: #6bbf78;
-    --sidebar-primary-foreground: #014035;
-    --sidebar-accent: rgba(255, 255, 255, 0.06);
-    --sidebar-accent-foreground: #ffffff;
-    --sidebar-border: rgba(255, 255, 255, 0.1);
-    --sidebar-ring: #6bbf78;
+    color-scheme: light;
 }
 
 @layer base {
@@ -176,7 +136,7 @@
   }
 
   .prose-portfolio {
-    @apply prose prose-neutral dark:prose-invert max-w-none;
+    @apply prose prose-neutral max-w-none;
     --tw-prose-links: var(--primary);
     --tw-prose-headings: var(--foreground);
   }
